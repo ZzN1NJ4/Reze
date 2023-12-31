@@ -1,4 +1,7 @@
 # Table of contents
 
-* [About Me](README.md)
-* [Introduction to Malware Development](introduction-to-malware-development.md)
+## General
+* [About Me](general/README.md)
+
+## Malware-Development
+* [Introduction to Malware Development](Malware-Development/introduction-to-malware-development.md)
