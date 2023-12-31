@@ -2,7 +2,7 @@
 
 ## General
 
-* [About Me](general/README.md)
+* [About Me](General/README.md)
 
 ## Malware-Development
 
