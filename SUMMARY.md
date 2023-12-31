@@ -2,8 +2,8 @@
 
 ## General
 
-* [About Me](General/README.md)
+* [About Me](General/about-me.md)
 
 ## Malware-Development
 
-* [Introduction to Malware Development](malware-development/introduction-to-malware-development.md)
+* [Introduction to Malware Development](Maldev/introduction-to-malware-development.md)
