@@ -2,8 +2,8 @@
 
 ## General
 
-* [About Me](about-me.md)
+* [About Me](README.md)
 
 ## MalDev
 
-* [Introduction](Maldev/introduction.md)
+* [Introduction](maldev/introduction.md)
