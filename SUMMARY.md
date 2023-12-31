@@ -4,6 +4,6 @@
 
 * [About Me](README.md)
 
-## Malware-Development
+## MalDev
 
-* [Introduction to Malware Development](malware-development/introduction-to-malware-development.md)
+* [MalDev](MalDev/malware-development.md)
