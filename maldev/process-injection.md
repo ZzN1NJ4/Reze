@@ -47,10 +47,10 @@ VOID* pShellcodeAddress = VirtualAlloc(NULL, sizeof(shellcode), (MEM_COMMIT | ME
 
 Note: Having an address with all RWX perms can be an IoC, so it’s generally not a great idea to do it. We will see how we can make it better later.
 
-* lpAddress is just starting address of the region to allocate. Since it is optional, we will keep it NULL & let the function decide.
-* dwSize is the size of the region to be allocated which we want to be the size of our shellcode.
+* <mark style="color:purple;">lpAddress</mark> is just starting address of the region to allocate. Since it is optional, we will keep it NULL & let the function decide.
+* <mark style="color:purple;">dwSize</mark> is the size of the region to be allocated which we want to be the size of our shellcode.
 * We are reserving & commiting the pages(memory) in one step with this, you can read about different options [here](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc).
-* PAGE\_EXECUTE\_READWRITE is the permission that we are setting on the allocated memory.
+* <mark style="color:purple;">PAGE\_EXECUTE\_READWRITE</mark> is the permission that we are setting on the allocated memory.
 
 #### 2. Writing our Shellcode to the Allocated Memory
 
@@ -78,12 +78,12 @@ HANDLE CreateThread(
 HANDLE hThread = CreateThread(NULL, NULL, pShellcodeAddress, NULL, NULL, NULL);
 ```
 
-* lpThreadAttributes is a pointer to a [SECURITY\_ATTRIBUTES](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/legacy/aa379560\(v=vs.85\)) structure. For simplicity purpose, we can just keep it NULL.
-* dwStackSize is the size of stack, if 0, the new thread uses default size for the executable.
-* lpStartAddress is the pointer to the (starting of the)function to be executed by the thread, which is why this is pShellcodeAddress.
-* lpParameter is optional, our “function” doesn’t use any parameter so we keep it NULL.
-* dwCreationFlags is a flag determining how we want to create a thread, we can keep it NULL for now.
-* lpThreadId is a pointer to a variable which will receive the ThreadId of the newly created thread, this can be NULL since we don’t have any use of it in this case.
+* <mark style="color:purple;">lpThreadAttributes</mark> is a pointer to a [SECURITY\_ATTRIBUTES](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/legacy/aa379560\(v=vs.85\)) structure. For simplicity purpose, we can just keep it NULL.
+* <mark style="color:purple;">dwStackSize</mark> is the size of stack, if 0, the new thread uses default size for the executable.
+* <mark style="color:purple;">lpStartAddress</mark> is the pointer to the (starting of the)function to be executed by the thread, which is why this is pShellcodeAddress.
+* <mark style="color:purple;">lpParameter</mark> is optional, our “function” doesn’t use any parameter so we keep it NULL.
+* <mark style="color:purple;">dwCreationFlags</mark> is a flag determining how we want to create a thread, we can keep it NULL for now.
+* <mark style="color:purple;">lpThreadId</mark> is a pointer to a variable which will receive the ThreadId of the newly created thread, this can be NULL since we don’t have any use of it in this case.
 
 #### 4. Letting Thread execute our shellcode
 
@@ -95,8 +95,8 @@ int main() {
 VOID* pShellcodeAddress = VirtualAlloc(NULL, sizeof(shellcode), (MEM_COMMIT | MEM_RESERVE), PAGE_EXECUTE_READWRITE);
 memcpy(pShellcodeAddress, shellcode, sizeof(shellcode));
 HANDLE hThread = CreateThread(NULL, NULL, pShellcodeAddress, NULL, NULL, NULL);
-return 0;     // <----- exiting main just after creating the thread
-}
+return 0;     // <----- this will exit main just after creating the thread
+}             //        so the thread doesn't get time to execute the shell
 ```
 
 The shellcode won’t run yet, why? because we didn’t let the thread to finish executing the code yet, we exit even before the thread has finished running the code which is why the calculator doesn’t spawn. So we need to wait for the thread to finish before we exit, we can do that by just using getchar / [Sleep](https://www.geeksforgeeks.org/sleep-function-in-c/) (which may not be the best ways) or rather [WaitForSingleObject](https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject), which will wait until the thread has finished executing only after which we can move to the next code / instruction.
