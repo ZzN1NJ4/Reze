@@ -2,7 +2,7 @@
 
 ## General
 
-* [About Me](General/about-me.md)
+* [About Me](README.md)
 
 ## MalDev
 
