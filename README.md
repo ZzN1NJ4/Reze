@@ -10,11 +10,11 @@ I know languages like C/C++/Python/Javascript and still learning Rust :crab:, si
 
 ### What is this Blog about?
 
-This blog is a dedicated space where I share my knowledge and discoveries which I have found throughout my journey of learning Malwares / (R.E.) Low level stuffs & Other Read Teaming Notes. My aim is to provide knowledge about the stuff that I learn and make simple notes out of it for future references. I’ll try my best to make things more understandable.
+This blog is a dedicated space where I share my knowledge and discoveries which I have learned/found throughout my evergoing journey of learning Malwares / (R.E.) Low level stuffs & Other Read Teaming Notes. My aim is to provide knowledge about the stuff that I learn and make simple notes out of it for future references. I’ll try my best to make things more understandable.
 
 It is also helps me with having an easy way to access my notes which I can refer whenever I require without even the need to be on my pc. I hope you find these notes helpful.
 
-There would also be some miscellaneous topics occasionally which would have things that I have found in the wild or some other weird things in general.
+There would also be some other Red teaming TTP's , Reverse Engineering, Binary exploitations, and some other weird things that I would like to share as well.
 
 
 
