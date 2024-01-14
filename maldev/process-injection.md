@@ -216,7 +216,7 @@ WriteProcessMemory(hProcess, pAddress, shellcode, sizeof(shellcode), 0);
 
 #### 4. Creating a Remote Thread to execute our Payload
 
-We have now written our payload into the memory space of the safe process, now we can just create a remote thread to run our payload using CreateRemoteThread
+We have now written our payload into the memory space of the safe process, now we can just create a remote thread to run our payload using [CreateRemoteThread](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createremotethread).
 
 ```c
 /* HANDLE CreateRemoteThread(
@@ -281,7 +281,7 @@ It is important to handle errors properly and also this helps us to debug things
 
 We can have a basic check accordingly to check the value of hProcess & print error message accordingly.  The [GetLastError](https://learn.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) function is really important while debugging our malware and we would be using this a lot.
 
-Here's the main function with added Debugging Information & Error Handling
+Here's the main function with added Debugging Information & Error Handling.
 
 ```c
 int main(int argc, char* argv[]) {
@@ -332,7 +332,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-Now this looks wayy better than what we have done [before](process-injection.md#id-5.-remote-process-injection-poc), It's always good to have debug statements in order to understand better
+Now this looks wayy better than what we have done [before](process-injection.md#id-5.-remote-process-injection-poc), It's always good to have debug statements in order to understand better.
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p><em>Remote Process Injection</em></p></figcaption></figure>
 
@@ -341,7 +341,7 @@ Now, let's just try to give a random value as PID which doesn't exists, like 123
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p><em>Random PID given</em> </p></figcaption></figure>
 
 Notice the GetLastError says 87, now if we go to the [System Error Codes](https://learn.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-) page, we can see that the \
-error 87 corresponds to "incorrect parameter",&#x20;
+error 87 corresponds to "incorrect parameter".
 
 <div align="center">
 
