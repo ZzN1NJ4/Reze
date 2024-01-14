@@ -140,15 +140,15 @@ If there is any problem, we can add more debug statements to check what is actua
 
 ### Remote Process Injection
 
-okay, now that we can inject the shellcode locally, let's try injecting it into a remote process. Using this, we can run our shellcode under the disguise of a legitimate process :imp:
+Okay, now that we can inject the shellcode locally, let's try injecting it into a remote process. Using this, we can run our shellcode under the disguise of a legitimate process :imp:
 
 Now since we have already created our shellcode, I will skip that part.
 
 #### 1. Opening Handle to a Process
 
-First of all, for us to access / interact with another process, we require a ["**Process Handle**"](https://serverfault.com/questions/27248/what-is-a-process-handle), we can achieve this using the [**OpenProcess**](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function which will then provide us with the process handle but it requires a [**Pid (Process Identifier)**](https://www.ibm.com/docs/en/ztpf/2019?topic=process-id)**.** \
+First of all, for us to access / interact with another process, we require a ["Process Handle"](https://serverfault.com/questions/27248/what-is-a-process-handle), we can achieve this using the [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function which will then provide us with the process handle but it requires a [Pid (Process Identifier)](https://www.ibm.com/docs/en/ztpf/2019?topic=process-id). \
 \
-For Simplicity purpose, we will first open a notepad, get it's PID, and then give it to [**OpenProcess**](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function. after opening the notepad you can just type this into cmd to get the PID of your notepad process.
+For Simplicity purpose, we will first open a notepad, get it's PID, and then give it to [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function. after opening the notepad you can just type this into cmd to get the PID of your notepad process.
 
 ```bash
 tasklist | findStr notepad
@@ -195,7 +195,7 @@ As you might have noticed, this is very similar to the  [VirtualAlloc](https://l
 
 #### 3. Writing payload to allocated Memory
 
-We can use [WriteProcessMemory](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-writeprocessmemory) function to write inside a process memory.
+We can use [WriteProcessMemory](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-writeprocessmemory) function to write inside a process memory (since I have used memcpy earlier, I'll use [WriteProcessMemory](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-writeprocessmemory) here).
 
 ```c
 /* BOOL WriteProcessMemory(
@@ -274,14 +274,12 @@ int main(int argc, char* argv[]) {
 
 ### Error Handling
 
-We can also see information on how we can debug in case of any errors.\
+It is important to handle errors properly and also this helps us to debug things and understand the actual problem we have in case we face any kind of error. Here we see the MSDN document for [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) which helps us gain insight on what to expect when calling the [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function.\
 
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p><em>MSDN document for OpenProcess</em></p></figcaption></figure>
 
-We can have a basic check accordingly to check the value of hProcess & print error message accordingly. \
-The [GetLastError](https://learn.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) function is really important while debugging our malware and we would be \
-using this a lot.
+We can have a basic check accordingly to check the value of hProcess & print error message accordingly.  The [GetLastError](https://learn.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) function is really important while debugging our malware and we would be using this a lot.
 
 Here's the main function with added Debugging Information & Error Handling
 
@@ -343,14 +341,15 @@ Now, let's just try to give a random value as PID which doesn't exists, like 123
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p><em>Random PID given</em> </p></figcaption></figure>
 
 Notice the GetLastError says 87, now if we go to the [System Error Codes](https://learn.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-) page, we can see that the \
-error 87 corresponds to "incorrect parameter", and if we try to give a higher privilege process id as \
-an input (eg. 4 which is system process), we get a different error (5) which corresponds to "Access is denied" as it should be.
+error 87 corresponds to "incorrect parameter",&#x20;
 
 <div align="center">
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p><em>Incorrect Parameter</em> </p></figcaption></figure>
 
 </div>
+
+And if we try to give a higher privilege process id as an input (eg. 4 which is system process), we get a different error (5) which corresponds to "Access is denied" as it should be.
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p><em>Access Denied</em></p></figcaption></figure>
 
