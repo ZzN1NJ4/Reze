@@ -355,3 +355,10 @@ And if we try to give a higher privilege process id as an input (eg. 4 which is 
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p><em>Access Denied</em></p></figcaption></figure>
 
+### References
+
+1. [Process Injection - MITRE ATT\&CK](https://attack.mitre.org/techniques/T1055/)
+2. [System Error Codes](https://learn.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-)
+3. [VirtualAllocEx](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualallocex)
+4. [ired.team](https://www.ired.team/)
+
