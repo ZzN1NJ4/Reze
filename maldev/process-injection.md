@@ -4,24 +4,26 @@ description: Local & Remote Process Injection
 
 # Process Injection
 
-Process Injection is a technique which involves injecting malicious code or a malicious DLL (Dynamic Link Library) into a legitimate process running on a system. This technique allows an attacker to execute their malicious code within the context of a trusted process, bypassing security measures and **potentially** remaining undetected.
+[Process Injection](https://attack.mitre.org/techniques/T1055/) is a technique which involves injecting malicious code or a malicious DLL (Dynamic Link Library) into a legitimate process running on a system. This technique allows an attacker to execute their malicious code within the context of a trusted process, bypassing security measures and **potentially** remaining undetected.
 
-Process injection can be performed on any OS, including Linux, Windows and macOS. Attacks can be broken down into a number of different sub-techniques. The Mitre ATT\&CK framework highlights the following process injection techniques:
+Process injection  can be broken down into a number of different sub-techniques. The [Mitre ATT\&CK framework](https://attack.mitre.org/) highlights the following [Process Injection](https://attack.mitre.org/techniques/T1055/) techniques:
 
-* DLL injection
-* portable execution injection
-* thread execution hijacking
-* ptrace system calls
-* proc memory
-* extra window memory injection
-* process hollowing
-* process doppelgänging
-* virtual dynamic shared object hijacking
-* listplanting
+* [DLL injection](https://attack.mitre.org/techniques/T1055/001/)
+* [Portable Execution Injection](https://attack.mitre.org/techniques/T1055/002/)
+* [Thread Execution Hijacking](https://attack.mitre.org/techniques/T1055/003/)
+* [APC (Asynchronous Procedure Calls) Injection](https://attack.mitre.org/techniques/T1055/004/)
+* [Thread Local Store](https://attack.mitre.org/techniques/T1055/005/)
+* [Ptrace System Calls](https://attack.mitre.org/techniques/T1055/008/)
+* [Proc Memory](https://attack.mitre.org/techniques/T1055/009/)
+* [Extra Window Memory Injection](https://attack.mitre.org/techniques/T1055/011/)
+* [Process Hollowing](https://attack.mitre.org/techniques/T1055/012/)
+* [Process Doppelganging](https://attack.mitre.org/techniques/T1055/013/)
+* [VDSO (Virtual Dynamic Shared Object) Hijacking](https://attack.mitre.org/techniques/T1055/014/)
+* [ListPlanting](https://attack.mitre.org/techniques/T1055/015/)
 
 ### Generating Shellcode
 
-Shellcode is the actual payload which is executed in most cases often to gain remote access (or perform any other action) to a machine.  There are different ways to generate a shellcode, but for simplicity purpose, I am going to stick with msfvenom calc payload which can be generated using the command below
+Shellcode is the actual payload which is executed in most cases often to gain remote access (or perform any other action) to a machine.  There are different ways to generate a shellcode, but for simplicity purpose, I am going to stick with [msfvenom](https://docs.metasploit.com/docs/using-metasploit/basics/how-to-use-msfvenom.html) calc payload which can be generated using the command below
 
 ```bash
 $ msfvenom -p windows/exec CMD=calc.exe EXITFUNC=thread -f C -b "\x00\x0a\x0d"
@@ -31,7 +33,7 @@ $ msfvenom -p windows/exec CMD=calc.exe EXITFUNC=thread -f C -b "\x00\x0a\x0d"
 
 #### 1. Allocating space for our Shellcode
 
-First we need to allocate memory to store our shellcode in our process memory. We can do that with the help of [**VirtualAlloc**](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc) function.
+First we need to allocate memory to store our shellcode in our process memory. We can do that with the help of [VirtualAlloc](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc) function.
 
 ```c
 /* Function Definition
