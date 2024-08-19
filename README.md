@@ -1,12 +1,12 @@
 # About Me
 
-### About Me (but small)
+### About Me&#x20;
 
-Hi, I am sn0wyfox / ZzN1NJ4.
+Hi, I am odinfox / ZzN1NJ4.
 
 I like studying / practicing hacking. Currently I am learning about Malware Development & Reverse Engineering. I generally love low level stuffs. I also like spending my time solving CTF challenges like [HTB](https://app.hackthebox.com/profile/778904) / [THM](https://tryhackme.com/p/ZzN1NJ4) etc.
 
-I know languages like C/C++/Python/Javascript and still learning Rust :crab:, simply because I love Rust very much afljweoigldfkjaow. I also love playing games like [Chess](https://www.chess.com/member/n1nj4\_629), [GeoGuessr](https://www.geoguessr.com/user/63330977a312727be9e4b64b).
+I know languages like C/C++/Python/Javascript and still learning Rust :crab:, simply because I love Rust very much . I also love playing games.
 
 ### What is this Blog about?
 
