@@ -1,5 +1,7 @@
 ---
 description: Local & Remote Process Injection
+cover: ../../.gitbook/assets/10101010101.jpg
+coverY: 0
 ---
 
 # Process Injection
@@ -133,9 +135,9 @@ int main() {
 }
 ```
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p><em>Executing our code to spawn a calculator</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p><em>Executing our code to spawn a calculator</em></p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p><em>Checking  the Payload through Process Hacker</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p><em>Checking  the Payload through Process Hacker</em></p></figcaption></figure>
 
 Nice, We are able to inject the shellcode into local process successfully!. \
 If there is any problem, we can add more debug statements to check what is actually happening.&#x20;
@@ -158,7 +160,7 @@ tasklist | findStr notepad
 
 <div align="center">
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p><em>notepad.exe having PID 2992</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p><em>notepad.exe having PID 2992</em></p></figcaption></figure>
 
 </div>
 
@@ -179,7 +181,7 @@ HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, PID);
 
 #### 2. Allocate Memory for Shellcode
 
-Now we just have to follow the same methods shown in [Local Process Injection](process-injection.md#local-process-injection) again but in the context of the Remote Process. So we start with [VirtualAllocEx](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualallocex)
+Now we just have to follow the same methods shown in [Local Process Injection](./#local-process-injection) again but in the context of the Remote Process. So we start with [VirtualAllocEx](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualallocex)
 
 ```c
 /*
@@ -279,7 +281,7 @@ int main(int argc, char* argv[]) {
 It is important to handle errors properly and also this helps us to debug things and understand the actual problem we have in case we face any kind of error. Here we see the MSDN document for [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) which helps us gain insight on what to expect when calling the [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function.\
 
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p><em>MSDN document for OpenProcess</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p><em>MSDN document for OpenProcess</em></p></figcaption></figure>
 
 We can have a basic check accordingly to check the value of hProcess & print error message accordingly.  The [GetLastError](https://learn.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) function is really important while debugging our malware and we would be using this a lot.
 
@@ -334,26 +336,26 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-Now this looks wayy better than what we have done [before](process-injection.md#id-5.-remote-process-injection-poc), It's always good to have debug statements in order to understand better.
+Now this looks wayy better than what we have done [before](./#id-5.-remote-process-injection-poc), It's always good to have debug statements in order to understand better.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p><em>Remote Process Injection</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p><em>Remote Process Injection</em></p></figcaption></figure>
 
 Now, let's just try to give a random value as PID which doesn't exists, like 123123
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p><em>Random PID given</em> </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p><em>Random PID given</em> </p></figcaption></figure>
 
 Notice the GetLastError says 87, now if we go to the [System Error Codes](https://learn.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-) page, we can see that the \
 error 87 corresponds to "incorrect parameter".
 
 <div align="center">
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p><em>Incorrect Parameter</em> </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p><em>Incorrect Parameter</em> </p></figcaption></figure>
 
 </div>
 
 And if we try to give a higher privilege process id as an input (eg. 4 which is system process), we get a different error (5) which corresponds to "Access is denied" as it should be.
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p><em>Access Denied</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p><em>Access Denied</em></p></figcaption></figure>
 
 ### References
 
