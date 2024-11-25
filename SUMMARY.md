@@ -18,5 +18,5 @@
 
 ## Assembly - x86
 
-* [x86 Overview](assembly-x86/x86-overview.md)
+* [x86 Architecture Overview](assembly-x86/x86-architecture-overview.md)
 * [Basic Assembly Program](assembly-x86/basic-assembly-program.md)

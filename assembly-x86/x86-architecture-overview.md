@@ -1,6 +1,6 @@
-# x86 Overview
+# x86 Architecture Overview
 
-Okay so I wont be explaining the x86 CPU architecture and stuff (maybe some other post) which I assume the reader is aware of, the basics of course. But even if that's not the case, just remember that there are these components in a CPU:
+I wont be deep diving and explaining everything in the x86 CPU architecture (maybe some other post)  and just touch the basics, enough for us to start tinkering with assembly language. For now, just remember that there are these components in a CPU:
 
 * Control Unit - gets instruction from main memory
 * Arithmetic Unit - Executes instruction returned from main memory
