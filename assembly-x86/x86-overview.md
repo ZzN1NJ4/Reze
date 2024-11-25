@@ -17,6 +17,8 @@ Registers are like a storage medium for the CPU, they are small, fast storage lo
 
 **Accumulator Register** : often results of arithmetic operations are stored in here
 
+This is how generally the registers are divided into their smaller counterparts, since it would be dumb to use RAX to just use only 2 bytes of data, something which can be done in AL / AH.\
+\
 RAX = 64 bit , EAX = 32 bit , AX = 16 bit , AH / AL = 8 bit (higher/lower)&#x20;
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
@@ -33,11 +35,13 @@ RAX = 64 bit , EAX = 32 bit , AX = 16 bit , AH / AL = 8 bit (higher/lower)&#x20;
 
 **Data Register** : generally used for multiplication/division
 
-**Note**: no pointer register can be addressed as smaller registers , i.e. SH/SL for ESP
+>
 
 #### **ESP / RSP**
 
 **Stack Pointer** : Always points to the top of the stack
+
+<mark style="color:red;">**Note:**</mark> No pointer register can be addressed as smaller registers , i.e. SH/SL for ESP
 
 #### **EBP / RBP**
 
