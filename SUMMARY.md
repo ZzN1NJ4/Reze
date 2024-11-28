@@ -15,6 +15,7 @@
 ## WINTERNAL
 
 * [PE Structure](winternal/pe-structure.md)
+* [PE Parser - peXtractor](winternal/pe-parser-pextractor.md)
 
 ## Assembly - x86
 
