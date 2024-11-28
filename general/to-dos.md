@@ -9,7 +9,7 @@ description: Things that I would write about soon
 * [ ] Analyze our Malware
 * [ ] Binary exploitation & Reverse Engineering
 * [ ] Memory Layout
-* [ ] PE Structure - 2 (dissect PE)
+* [x] PE Structure - 2 (dissect PE)
 * [ ] NTDLL Injection
 * [ ] Direct & Indirect System calls
 
