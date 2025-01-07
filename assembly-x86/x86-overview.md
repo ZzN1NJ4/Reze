@@ -21,7 +21,7 @@ This is how generally the registers are divided into their smaller counterparts,
 \
 RAX = 64 bit , EAX = 32 bit , AX = 16 bit , AH / AL = 8 bit (higher/lower)&#x20;
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### **EBX / RBX**
 

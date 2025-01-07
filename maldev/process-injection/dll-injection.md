@@ -1,3 +1,7 @@
+---
+description: Injecting DLL into a Process
+---
+
 # DLL Injection
 
 ## Writing Our Own DLL
@@ -194,7 +198,7 @@ Note that there wasn’t any typo in the print statement , but after searching f
 
 <figure><img src="../../.gitbook/assets/image 8.png" alt=""><figcaption></figcaption></figure>
 
-which is absolutely correct since `LoadLibaryW` (typoed) doesn’t exists, but we can also try googling the issue and find pages like [this ](https://stackoverflow.com/questions/7682732/getprocaddress-error-127-error-proc-not-found)and [this](https://forums.codeguru.com/showthread.php?292253-what-s-the-meaning-of-error-code-127-ERROR\_PROC\_NOT\_FOUND) which further confirms what we saw. And so with good  debugging and googling skills, one can save their time and get to exactly know what is causing the issue.&#x20;
+which is absolutely correct since `LoadLibaryW` (typoed) doesn’t exists, but we can also try googling the issue and find pages like [this ](https://stackoverflow.com/questions/7682732/getprocaddress-error-127-error-proc-not-found)and [this](https://forums.codeguru.com/showthread.php?292253-what-s-the-meaning-of-error-code-127-ERROR_PROC_NOT_FOUND) which further confirms what we saw. And so with good  debugging and googling skills, one can save their time and get to exactly know what is causing the issue.&#x20;
 
 ## References
 
