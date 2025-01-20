@@ -10,6 +10,8 @@ As we know that when we call any windows API function like [OpenProcess](https:/
 
 <mark style="color:orange;">**`OpenProcess (API / Kernel32.dll) --> OpenProcess (Kernelbase.dll)  --> NtOpenProcess (NTAPI) --> syscall --> Kernel Mode --> Result`**</mark>
 
+<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption><p>image from redops.at</p></figcaption></figure>
+
 And as we know that the lower we go , the more control we have over our Malware, the better we can understand / write our malware and thus, the better we can evade antivirus programs. I'll show how we can use the low-level NTAPI functions to inject our shellcode into any legitimate process.
 
 ## Initial Setup

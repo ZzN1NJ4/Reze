@@ -1,4 +1,8 @@
-# Basic Assembly Program
+---
+description: Basic Program in x86 Assembly (Linux)
+---
+
+# x86 Basic Program
 
 Okay, so lets start coding our first program in assembly, since this is our first program, I'll just focus on printing a string. In order to call any function, we would first have necessary parameters pushed to the stack and then finally calling the function. In our case, we would be calling the `write` system call. If you want to read more about it, you can type `man 2 write` or just lookup on google about this.
 
