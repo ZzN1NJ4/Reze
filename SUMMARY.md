@@ -23,3 +23,7 @@
 
 * [x86 Architecture Overview](assembly-x86/x86-overview.md)
 * [x86 Basic Program](assembly-x86/x86-basic-program.md)
+
+## Rust Maldev
+
+* [Rust Malware - Part 1](rust-maldev/rust-malware-part-1.md)
