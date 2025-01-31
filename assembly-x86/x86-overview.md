@@ -21,7 +21,7 @@ This is how generally the registers are divided into their smaller counterparts,
 \
 RAX = 64 bit , EAX = 32 bit , AX = 16 bit , AH / AL = 8 bit (higher/lower)&#x20;
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### **EBX / RBX**
 
@@ -34,8 +34,6 @@ RAX = 64 bit , EAX = 32 bit , AX = 16 bit , AH / AL = 8 bit (higher/lower)&#x20;
 #### **EDX / RDX**
 
 **Data Register** : generally used for multiplication/division
-
->
 
 #### **ESP / RSP**
 
@@ -101,7 +99,7 @@ Segment Registers are 16-bit registers that convert the flat memory space into d
 
 #### **LEA**
 
-`lea eax, [ebx+4]` lea is very similar to mov but instead of copying the value in ebx+4, it will do ebx address + 4 , and the load that into eax
+`lea eax, [ebx+4]` lea is very similar to mov but instead of copying the value **in** ebx+4, it will copy the value **of** `ebx+4` , and the load that into `eax`.
 
 #### **NOP**
 
@@ -180,3 +178,8 @@ nop sled , does nothing , yeah , 0x90
 `call location` possible function call (based on the stack alignment)
 
 Aand that's it ig, I'll walkthrough a simple assembly program in the next post
+
+## References
+
+* [https://www.felixcloutier.com/x86/lea](https://www.felixcloutier.com/x86/lea)
+
