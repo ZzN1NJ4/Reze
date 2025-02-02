@@ -26,7 +26,8 @@
 
 ## R.E.
 
-* [Reversing with x64dbg](r.e./reversing-with-x64dbg.md)
+* [Reversing with x64dbg](r.e./reversing-with-x64dbg/README.md)
+  * [Reversing with Ghidra](r.e./reversing-with-x64dbg/reversing-with-ghidra.md)
 
 ## Rust Maldev
 

