@@ -38,4 +38,5 @@
 * [BITSCTF - 2025](ctf/bitsctf-2025/README.md)
   * [Reversing](ctf/bitsctf-2025/reversing.md)
   * [DFIR](ctf/bitsctf-2025/dfir.md)
+  * [Pwn](ctf/bitsctf-2025/pwn.md)
   * [Web](ctf/bitsctf-2025/web.md)

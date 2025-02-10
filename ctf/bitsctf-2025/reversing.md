@@ -1,3 +1,9 @@
+---
+description: >-
+  5 - Baby Rev, Loginator.out , Appreciation of Art , Praise our RNG Gods,
+  Reverse Mishaps
+---
+
 # Reversing
 
 ## Baby Rev
