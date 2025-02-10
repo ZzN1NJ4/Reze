@@ -32,3 +32,10 @@
 ## Rust Maldev
 
 * [Rust Malware - Part 1](rust-maldev/rust-malware-part-1.md)
+
+## CTF
+
+* [BITSCTF - 2025](ctf/bitsctf-2025/README.md)
+  * [Reversing](ctf/bitsctf-2025/reversing.md)
+  * [DFIR](ctf/bitsctf-2025/dfir.md)
+  * [Web](ctf/bitsctf-2025/web.md)
