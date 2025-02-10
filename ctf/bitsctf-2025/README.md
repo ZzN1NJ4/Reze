@@ -13,5 +13,5 @@ Categories include Web Exploitation, Reverse Engineering, Cryptography, Forensic
 
 ## How it went
 
-Okay I wouldn't exactly say that I loved this CTF, the forensics challenge felt more like steganography, there were times they had to "fix" some of the challenges later on and there were downtimes for challenges hosted on the servers. I couldn't do much on the first day, but on the 2nd day, they included some more challenges and I did the most at that time. Here are the writeups of all the challenges I did and I'll also try covering the ones I didn't do (some of them are really absurd like ????).&#x20;
+Okay I have mixed feelings for this CTF. I couldn't do much on the first day, but on the 2nd day, they included some more challenges and I did the most at that time. Here are the writeups of all the challenges I did and I'll also try covering the ones I didn't do and some of them were really absurd like ???? (I'm looking at you `insanity check - OSINT`) . &#x20;
 
