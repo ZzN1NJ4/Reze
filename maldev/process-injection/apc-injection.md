@@ -84,7 +84,7 @@ int main() {
 
 Here I did notice that if we do not have the Sleep function, I don't see the print statement in the function although the thread does execute our shellcode&#x20;
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 But when I do have the Sleep function, I see the print statement in the `Aleeert` function. After a failed chatgpt interaction and a little document searching, I found this on MSDN,
 

@@ -6,7 +6,7 @@ description: Basic Program in x86 Assembly (Linux)
 
 Okay, so lets start coding our first program in assembly, since this is our first program, I'll just focus on printing a string. In order to call any function, we would first have necessary parameters pushed to the stack and then finally calling the function. In our case, we would be calling the `write` system call. If you want to read more about it, you can type `man 2 write` or just lookup on google about this.
 
-<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
 
 Alright, so we know that it takes 3 parameters, a file descriptor , a buffer to string , and then the size of the string. We will start with initializing our string and the length in the `.data` section and then proceed with the actual code in the `.text` section.&#x20;
 
@@ -48,7 +48,7 @@ ld print.o -o print
 ./print
 ```
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 
 And we see our half cut string as intended. That's all for now. You can try updating the string & length and play more with the code.
 
