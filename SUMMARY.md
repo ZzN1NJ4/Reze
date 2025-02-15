@@ -45,3 +45,7 @@
   * [Misc](ctf/bitsctf-2025/misc.md)
   * [Web](ctf/bitsctf-2025/web.md)
   * [DUMP - 14a239d](ctf/bitsctf-2025/dump-14a239d.md)
+
+## Hardware
+
+* [HTB - Low Logic](hardware/htb-low-logic.md)

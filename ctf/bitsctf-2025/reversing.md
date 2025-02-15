@@ -8,7 +8,7 @@ description: >-
 
 ## Baby Rev
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 There is a file chall.py provided to us, looking into it, we see this&#x20;
 
@@ -45,13 +45,13 @@ while True:
         break
 ```
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Loginator.out
 
 For this one, we had given a file loginator.out and a series of hex strings. On running the binary, we see that it encodes the string in hex and prints it back.
 
-<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After running the binary, we can see that it obfuscates the string back to hex and prints it, so that weird hex provided to us might be the target hex for the flag ig
 
@@ -93,7 +93,7 @@ while "}" not in flag:
 
 ## Appreciation of Art
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are given a binary `a.art` and this is what we see on running it
 
@@ -129,11 +129,11 @@ Well, This was something I genuinely want to know the intended solution for.&#x2
 
 ## Praise our RNG Gods
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are given a `chall.txt` file and a netcat server to connect to. I had never seen a python bytecode disassembled so I skipped it but then later visited this challenge again and managed to reverse it. Although I was late and so couldn't complete the challenge.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ````0
 2 LOAD_CONST 1 (None)
@@ -323,6 +323,6 @@ if __name__ == "__main__":
 
 ## Reversing Mishaps
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Only 6 solves, Unfortunately I didn't look into this one, so I'll update this and link to others who have written about it.

@@ -59,7 +59,7 @@ print("Magic Number : 0x%X", pDOSHeader->e_magic);
 
 There are also cases , although rare, that the DOS Stub has been modified, this part generally runs whenever the executable is loaded in **MS-DOS** application/shell. Modern PE just print the message that it can't be run in **DOS** mode and exit, we can look at PE bear to check this message.
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption><p>DOS Stub</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>DOS Stub</p></figcaption></figure>
 
 [0xrick](https://0xrick.github.io/win-internals/pe3/) has also shown how he analyzed the dos stub so go check that out if you want to understand more about it. Since the stub is same for every binary, I've hardcoded to check whether the DOS Stub in the given PE file is same or not, if it isn't, then we know that the Stub might have been modified.\
 Since the DOS Header remains 64 bytes, I just add that to `pFile` (the start of PE file) to reach the Stub.
@@ -102,7 +102,7 @@ Anyways, we know that the next comes NT Headers but for some executables that ar
 [+] Rich Header may be present
 ```
 
-<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption><p>DOS Header in PE-bear</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1) (1).png" alt=""><figcaption><p>DOS Header in PE-bear</p></figcaption></figure>
 
 ## 2.5 Rich Headers
 
@@ -161,17 +161,17 @@ for (size_t i = 0; i < 4; i++) {
 
 Now parsing and printing the information from the Rich Header was a bit lengthy and I will just show how a `CompID` gives us necessary information. For this I did refer to how [PE-bear parses](https://github.com/hasherezade/bearparser/blob/master/parser/pe/RichHdrWrapper.cpp) the rich header. So using PE-bear, we see the contents of Rich Header.
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Rich Header</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Rich Header</p></figcaption></figure>
 
 We can throw that hex to [cyberchef](https://gchq.github.io/CyberChef/#recipe=From_Hex\('Auto'\)XOR\(%7B'option':'Hex','string':'E4%2087%20B6%20E4'%7D,'Standard',false\)To_Hex\('Space',8\)\&input=QTAgRTYgRDggQjcgRTQgODcgQjYgRTQgRTQgODcgQjYgRTQgRTQgODcgQjYgRTQgRTIgMDYgQjcgRTUgRTYgODcgQjYgRTQgRTIgMDYgQjMgRTUgRkMgODcgQjYgRTQgRTIgMDYgQjIgRTUgRUYgODcgQjYgRTQgRTIgMDYgQjUgRTUgRTcgODcgQjYgRTQgQUYgRkYgQjcgRTUgRTEgODcgQjYgRTQgRTQgODcgQjcgRTQgQjYgODcgQjYgRTQgODkgMDYgQjIgRTUgRTUgODcgQjYgRTQgODkgMDYgNDkgRTQgRTUgODcgQjYgRTQgODkgMDYgQjQgRTUgRTUgODcgQjYgRTQgNTIgNjkgNjMgNjggRTQgODcgQjYgRTQg) and analyze it manually, (check [this link](https://gchq.github.io/CyberChef/#recipe=From_Hex\('Auto'\)XOR\(%7B'option':'Hex','string':'E4%2087%20B6%20E4'%7D,'Standard',false\)To_Hex\('Space',8\)\&input=QTAgRTYgRDggQjcgRTQgODcgQjYgRTQgRTQgODcgQjYgRTQgRTQgODcgQjYgRTQgRTIgMDYgQjcgRTUgRTYgODcgQjYgRTQgRTIgMDYgQjMgRTUgRkMgODcgQjYgRTQgRTIgMDYgQjIgRTUgRUYgODcgQjYgRTQgRTIgMDYgQjUgRTUgRTcgODcgQjYgRTQgQUYgRkYgQjcgRTUgRTEgODcgQjYgRTQgRTQgODcgQjcgRTQgQjYgODcgQjYgRTQgODkgMDYgQjIgRTUgRTUgODcgQjYgRTQgODkgMDYgNDkgRTQgRTUgODcgQjYgRTQgODkgMDYgQjQgRTUgRTUgODcgQjYgRTQgNTIgNjkgNjMgNjggRTQgODcgQjYgRTQg) for anyone curious). As we see that the Header has been **XORed** using the last 4 bytes of itself.
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption><p>Rich Header decrypted</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Rich Header decrypted</p></figcaption></figure>
 
 we can check the first 4 value which represents the `DanS` string.
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Rich Header in PE-bear</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Rich Header in PE-bear</p></figcaption></figure>
 
 Alright, so after the `DanS` id, there are 3 checksumed padding which appears to be NULL, after which we have a series of `Comp ID` which maybe stands for `Compiler ID` ? not sure, anyways its of 8 bytes and the way it is structured is 2 bytes each represent a number. So lets assume the `CompID` of `E2 06 B7 E5 E6 87 B6 E4` which is the encrypted one, but after **XOR** it becomes \
 `06 81 01 01 02 00 00 00` and since this is in little endian, we first need to convert it to big endian  using [left shift](https://en.wikipedia.org/wiki/Logical_shift) operation which I talked about in [this post](https://reze.gitbook.io/bin/assembly-x86/x86-architecture-overview#shift).
