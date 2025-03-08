@@ -14,7 +14,7 @@ So why bother with the stupid high level stuff , when we can directly do a sysca
 
 ### Theory
 
-Okay so I have given a brief in this post in Winternal(link), but to just give a gist of it, each system call is basically just a number called SSN (system service number) which is what the NTAPI passes to kernel mode where a table SSDT is used to look up for the correct function (SSR) for that SSN and it gets called to then the result being sent back to user mode. We don't need to dive deep into this for now. We can see a pattern in most of the NTAPI functions which would look similar to this
+Okay so I have given a brief in [this post](https://reze.gitbook.io/bin/winternal/system-calls), but to just give a gist of it, each system call is basically just a number called SSN (system service number) which is what the NTAPI passes to kernel mode where a table SSDT is used to look up for the correct function (SSR) for that SSN and it gets called to then the result being sent back to user mode. We don't need to dive deep into this for now. We can see a pattern in most of the NTAPI functions which would look similar to this
 
 <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
