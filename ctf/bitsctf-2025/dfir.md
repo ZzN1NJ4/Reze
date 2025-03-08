@@ -6,7 +6,7 @@ description: 3 - Baby DFIR , Virus Camp 1 , Virus Camp 2
 
 ## Baby DFIR
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 we get a `abc.ad1` file , if we open it in FTK Imager, we clearly see a flag.txt which shows us the flag.&#x20;
 

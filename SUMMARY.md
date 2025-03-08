@@ -3,21 +3,25 @@
 ## General
 
 * [About Me](README.md)
-* [Log](general/log.md)
+* [Exploration](general/exploration.md)
 
 ## MalDev
 
 * [Introduction](maldev/introduction.md)
 * [Process Injection](maldev/process-injection/README.md)
   * [DLL Injection](maldev/process-injection/dll-injection.md)
-  * [NTAPI Implementation](maldev/process-injection/ntapi-implementation.md)
+  * [NTAPI Injection](maldev/process-injection/ntapi-injection.md)
   * [APC Injection](maldev/process-injection/apc-injection.md)
+  * [Early Bird & Special APC](maldev/process-injection/early-bird-and-special-apc.md)
+  * [Direct System Call](maldev/process-injection/direct-system-call.md)
+  * [Indirect System Call](maldev/process-injection/indirect-system-call.md)
 * [Independent Malware](maldev/independent-malware.md)
 
 ## WINTERNAL
 
 * [PE Structure](winternal/pe-structure.md)
 * [PE Parser - peXtractor](winternal/pe-parser-pextractor.md)
+* [System Calls](winternal/system-calls.md)
 
 ## Assembly - x86
 
@@ -26,8 +30,8 @@
 
 ## R.E.
 
-* [Reversing with x64dbg](r.e./reversing-with-x64dbg/README.md)
-  * [Reversing with Ghidra](r.e./reversing-with-x64dbg/reversing-with-ghidra.md)
+* [Reversing with x64dbg](r.e./reversing-with-x64dbg.md)
+* [Reversing with Ghidra](r.e./reversing-with-ghidra.md)
 
 ## Rust Maldev
 
