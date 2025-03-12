@@ -9,8 +9,10 @@ description: Things I did , Things I want to do
 * [ ] Binary Exploitation
 * [ ] Memory Layout
 * [ ] x86 Memory Addressing & x86 Calling Convention
-* [ ] Direct & Indirect System calls
 * [ ] VirusTotal 0 detections
+* [ ] IAT Hooking / Spoofing&#x20;
+* [ ] Trampolines  / Detours
+* [ ] Anti analysis / Anti VM&#x20;
 
 ## Explored
 
@@ -22,9 +24,9 @@ description: Things I did , Things I want to do
 * [ ] [NTAPI Process Injection](https://reze.gitbook.io/bin/maldev/process-injection/ntapi-implementation)
 * [ ] [PE Structure](https://reze.gitbook.io/bin/winternal/pe-structure) & [PE Parser](https://reze.gitbook.io/bin/winternal/pe-parser-pextractor)
 * [ ] [x86 Overview](https://reze.gitbook.io/bin/assembly-x86/x86-architecture-overview) & [x86 Basic Program](https://reze.gitbook.io/bin/assembly-x86/x86-basic-program)
-* [ ] Maldev - Rust implementation
-* [ ] Reversing our malware
-* [ ] Direct & Indirect Syscalls
+* [ ] [Maldev - Rust implementation](https://reze.gitbook.io/bin/rust-maldev/rust-malware-part-1)
+* [ ] [Reversing our malware](https://reze.gitbook.io/bin/r.e./reversing-with-x64dbg)
+* [ ] [Direct & Indirect Syscalls](https://reze.gitbook.io/bin/maldev/process-injection/direct-system-call)
 
 ## Interesante
 

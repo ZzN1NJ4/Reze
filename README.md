@@ -1,31 +1,24 @@
-# About Me
+---
+description: Introduction to Malware Development
+---
 
-### About Me&#x20;
+# Introduction
 
-Hi, I am odinfox / ZzN1NJ4.
+> <mark style="color:red;">**Note:**</mark> <mark style="color:purple;">**Any Piece of Software / method / etc. shall be used for educational purposes only. The author does not condone the use of any of it for Malicious purposes.**</mark>
 
-I like studying / practicing hacking. Currently I am learning about Malware Development & Reverse Engineering. I generally love low level stuffs. I also like spending my time solving CTF challenges like [HTB](https://app.hackthebox.com/profile/778904) / [THM](https://tryhackme.com/p/ZzN1NJ4) etc. I am OSCP Certified and interested in other certs like CPTS, CWEE, OSED, OSEP, (which I may not go for anymore due to the crazyy prices).
+Developing a Malware is a very simple task. But to do so while avoiding all the AVs, Defender, EDRs, Unga Bunga shi- is sophisticated. Here I will discuss about different methods that I have read online / found in the wild and stupid things which I tried on my own.
 
-I know languages like C/C++/Python/Javascript and still learning Rust :crab:, simply because I love Rust very much . I also love playing games.
+Before all of that, there are some prerequisites in order to get into it like :-
 
-### What is this Blog about?
+* Basic Computer Knowledge
+* Low level Programming language like C/C++/Rust
+* Basic Reversing
+* Basic Assembly Instructions
+* Debugging
+* A lot of Determination & Patience
 
-This blog is a dedicated space where I share my knowledge and discoveries which I have learned/found throughout my ever-going journey of learning Malwares / (R.E.) Low level stuffs & Other Read Teaming Notes. My aim is to provide knowledge about the stuff that I learn and simply just make notes out of it for future references. I’ll try my best to make things more understandable (I am dumb).
+<figure><img src=".gitbook/assets/helo.jpg" alt=""><figcaption><p><em>Let's start our Claws-room</em></p></figcaption></figure>
 
-It is also helps me with having an easy way to access my notes which I can refer whenever I require without even the need to be on my pc. I hope you find these notes helpful.
+Complexity would gradually increase as we dive into windows internals to understand how certain things work. I have already mentioned the resources which I have found quite useful [here](https://github.com/ZzN1NJ4/Malware-Development/blob/main/RESOURCES.md), and I don't want to repeat the same thing again so go check that out if you want.
 
-There would also be some  Reverse Engineering, Binary exploitation, random cool methods / challenges, and also other weird things that I would like to share as well.\
-
-
-⚠️ <mark style="color:red;">**Note:**</mark> <mark style="color:red;">**Any methods, tools, or techniques discussed or demonstrated on this blog are exclusively for educational purposes.**</mark> <mark style="color:red;background-color:yellow;">**I do not endorse or support the use of this information for any malicious activities.**</mark>
-
-\
-I am still learning & I have a very far road ahead. You can reach out to me if you find any mistakes in my blog or for any other general queries here [junaid629khan@gmail.com](mailto:junaid629khan@gmail.com) or at [twitter](https://twitter.com/ZzN1NJ4) instead.\
-Thank you.
-
-### Socials
-
-You can follow me on [twitter](https://twitter.com/ZzN1NJ4) :bird:\
-Here's my [HTB](https://app.hackthebox.com/profile/778904), [THM](https://tryhackme.com/p/ZzN1NJ4). \
-Github: [https://github.com/ZzN1NJ4/](https://github.com/ZzN1NJ4/) :man\_technologist:\
-You can show your support by [buying me a coffee here](https://www.buymeacoffee.com/ilzfiao0kw) :coffee:.
+There would also be a lot of Googling stuffs & going through different Documentations & undocumented structures, and smashing your head against the wall. Perseverance is necessary
