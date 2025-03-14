@@ -6,7 +6,7 @@ description: 3 - Baby DFIR , Virus Camp 1 , Virus Camp 2
 
 ## Baby DFIR
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 we get a `abc.ad1` file , if we open it in FTK Imager, we clearly see a flag.txt which shows us the flag.&#x20;
 
@@ -14,7 +14,7 @@ we get a `abc.ad1` file , if we open it in FTK Imager, we clearly see a flag.txt
 
 ## Virus Camp 2
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There were 2 parts to this, since I found the flag for the 2nd part first, I'll write it this way. We do see a `flag.enc` file in desktop, there weren't anything much apart from common files in every other folder. I decided to have a look into `AppData`, and first thought of checking Powershell history and found this
 
@@ -67,7 +67,7 @@ After running this , we see a new file and opening it, we get the flag
 
 ## Virus Camp 1
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now once again I started looking for suspicious artifacts  and found a file `extension.js` in the `.vscode` folder which reveals our 1st flag
 

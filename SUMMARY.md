@@ -10,6 +10,8 @@
   * [Early Bird & Special APC](maldev/process-injection/early-bird-and-special-apc.md)
   * [Direct System Call](maldev/process-injection/direct-system-call.md)
   * [Indirect System Call](maldev/process-injection/indirect-system-call.md)
+* [Evasion](maldev/evasion/README.md)
+  * [PPID Spoofing](maldev/evasion/ppid-spoofing.md)
 * [Independent Malware](maldev/independent-malware.md)
 
 ## WINTERNAL
