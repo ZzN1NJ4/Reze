@@ -10,13 +10,13 @@ Understanding this flow is crucial when dealing with system calls, as they serve
 
 So why bother with the stupid high level stuff , when we can directly do a syscall is what some _gato_ thought.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p><em>What if I just syscall directly ?</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p><em>What if I just syscall directly ?</em></p></figcaption></figure>
 
 ### Theory
 
 Okay so I have given a brief in [this post](https://reze.gitbook.io/bin/winternal/system-calls), but to just give a gist of it, each system call is basically just a number called SSN (system service number) which is what the NTAPI passes to kernel mode where a table SSDT is used to look up for the correct function (SSR) for that SSN and it gets called to then the result being sent back to user mode. We don't need to dive deep into this for now. We can see a pattern in most of the NTAPI functions which would look similar to this
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```nasm
 mov r10, rcx
@@ -97,9 +97,9 @@ END
 
 after we have written our asm file, we would have to link it with our project , to do that right click on the project in solution explorer and add a build dependency -> masm. Then just make sure that the file sys.asm is being included in the build and is also of type "Microsoft Macro Assembler" (right click on file name -> properties)
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Alright, now we have setup the assembly to run, all that's left is just the same NTAPI process injection. I dont want to fill this blog with a long code of me doing the same thing again so if you want to see it, you can check out the code in [my github](https://github.com/ZzN1NJ4/Malware-Development/blob/main/isystemcalls/main.c). Here's a snippet (as you can see this is very similar to the NTAPI implementation)
 

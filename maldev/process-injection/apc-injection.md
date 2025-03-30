@@ -84,7 +84,7 @@ int main() {
 
 Here I did notice that if we do not have the Sleep function, I don't see the print statement in the function although the thread does execute our shellcode&#x20;
 
-<figure><img src="../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 But when I do have the Sleep function, I see the print statement in the `Aleeert` function. After a failed chatgpt interaction and a little document searching, I found this on MSDN,
 
@@ -92,7 +92,7 @@ But when I do have the Sleep function, I see the print statement in the `Aleeert
 
 So it means that our code was queued even before the thread got the time to run the function, this I can prove by removing the `SleepEx` function which means that our **thread** should not be in the **alertable** state yet it runs our shellcode because of us queueing it before it can even run.
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
 One thing to note is that we still are allocating memory with `PAGE_EXECUTE_READWRITE` which is a **very big red flag** that we are doing something suspicious. We can eliminate that by allocating our shellcode to the `.text` section as I have shown here\[link] previously.
 
@@ -106,11 +106,11 @@ __declspec(allocate(".text")) char shellcode[] =
 
 And we see that we are able to execute our shellcode neatly without allocating any RWX memory.
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
 Alright since we technically haven't played with alertable thread yet, I'll create a thread that goes into alertable state and only then do we queue the APC for it to run.
 
-<figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
 
 We know that the thread was in alertable state since it did ran our shellcode, you can try removing the `SleepEx` function and run the program again, the shellcode won't run since the thread wont be in alertable state.
 
@@ -118,7 +118,7 @@ We know that the thread was in alertable state since it did ran our shellcode, y
 
 Out of curiousity, I wanted to check this against VirusTotal and I was kinda surprised at the rate of detection ( 423094eabcc7ffa09ba35d3c6df2d3a4cecc9505fcd9bb4e629cb675c2e5e122 ). I have used the binary where I allocate shellcode in `.text` section.
 
-<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is not bad because almost all of them AV flagged this because of the msf payload, so if we were to use any other custom payload, the rate will go considerably low.
 

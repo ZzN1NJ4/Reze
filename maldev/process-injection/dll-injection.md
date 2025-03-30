@@ -10,7 +10,7 @@ Okay first of all , to do a DLL injection , we need a DLL ofcourse, so we can ei
 
 In visual studio , to create a DLL , we first need to create a new project and then select (DLL) option
 
-![image.png](<../../.gitbook/assets/image (17) (1) (1).png>)
+![image.png](<../../.gitbook/assets/image (17) (1) (1) (1).png>)
 
 after giving a name for the project , visual studio will create a file with basic DLL skeleton
 

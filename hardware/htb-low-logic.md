@@ -16,24 +16,24 @@ After downloading the zip file, we can unzip it with "hackthebox" password, and 
 
 <figure><img src="../.gitbook/assets/chip.jpg" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ok, this is my first hardware challenge and I dont' have much clue on what to do here, but someone hinted me to look at how the transistors are used to construct logic gates. After googling for a while, I found [this page](https://www.instructables.com/Logic-Gates-with-NPN-transistors/) which talks about it. The interesting ones were the `AND` / `OR` gates. Here's how the `AND` gate look like
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>AND gate</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>AND gate</p></figcaption></figure>
 
 only if both the inputs are high (1) , then the bulb is lit (output is 1), else 0. \
 Then there is the `OR` gate where if either of them are conducting (1) , then the output is 1, and is 0 only if both of the inputs are 0.
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>OR gate</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p>OR gate</p></figcaption></figure>
 
 It then became easy to figure out the similaritess of our picture and the gates and I came to this conclusion.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 so with this, we now know what to perform with the given inputs. It would be something like this&#x20;
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So I wrote a small python script to do that for me with the given inputs and then print the output.
 
@@ -51,8 +51,8 @@ print(output)
 
 ```
 
-<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Seems like binary, I used cyberchef to convert it back and got the flag. GGs !
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>

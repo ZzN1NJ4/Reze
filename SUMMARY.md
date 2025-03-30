@@ -19,6 +19,7 @@
 * [PE Structure](winternal/pe-structure.md)
 * [PE Parser - peXtractor](winternal/pe-parser-pextractor.md)
 * [System Calls](winternal/system-calls.md)
+* [PEB & TEB](winternal/peb-and-teb.md)
 
 ## Assembly - x86
 
@@ -46,6 +47,11 @@
   * [Misc](ctf/bitsctf-2025/misc.md)
   * [Web](ctf/bitsctf-2025/web.md)
   * [DUMP - 14a239d](ctf/bitsctf-2025/dump-14a239d.md)
+* [HTB Cyber Apocalypse - 2025](ctf/htb-cyber-apocalypse-2025/README.md)
+  * [OSINT](ctf/htb-cyber-apocalypse-2025/osint.md)
+  * [Prompt Injection - AI](ctf/htb-cyber-apocalypse-2025/prompt-injection-ai.md)
+  * [Reversing](ctf/htb-cyber-apocalypse-2025/reversing.md)
+  * [Forensics](ctf/htb-cyber-apocalypse-2025/forensics.md)
 
 ## Hardware
 

@@ -8,7 +8,7 @@ description: >-
 
 ## Baby Rev
 
-<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There is a file chall.py provided to us, looking into it, we see this&#x20;
 
@@ -45,23 +45,23 @@ while True:
         break
 ```
 
-<figure><img src="../../.gitbook/assets/image (7) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Loginator.out
 
 For this one, we had given a file loginator.out and a series of hex strings. On running the binary, we see that it encodes the string in hex and prints it back.
 
-<figure><img src="../../.gitbook/assets/image (8) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After running the binary, we can see that it obfuscates the string back to hex and prints it, so that weird hex provided to us might be the target hex for the flag ig
 
-<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 > 02 92 a8 06 77 a8 32 3f 15 68 c9 77 de 86 99 7d 08 60 8e 64 77 be ba 74 26 96 e7 4e
 
 with some guess work, I could make out a few initial characters and quickly wrote a python script to brute force all the others. Although I could "reverse" the binary and find out how it worked, this was way easier.
 
-<figure><img src="../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I automate the guess work in python until I find the matching hex and continue until I get to the end of the flag
 
@@ -89,25 +89,25 @@ while "}" not in flag:
 
 
 
-<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Appreciation of Art
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are given a binary `a.art` and this is what we see on running it
 
-<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once again, This was something that I didn't exactly "reversed" and took a shortcut lol, but first comes some initial analysis I did.
 
-<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So It's a stripped binary, x64 and my guess for the reason behind those single char write calls is that they really didn't wanted us to look into any strings inside the binary. Running strings only gives us this
 
-<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I did try r2 to reverse it but then quickly decided to take a simpler approach. I run the program again and then crash it using `gcore` to get the core dump and grep for strings in it. First we need to enable the core dump.
 
@@ -119,21 +119,21 @@ ps aux | grep a.art
 gcore -o dump <pid>
 ```
 
-<figure><img src="../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Although I still couldn't see what was the name of the character , I did get the flag.
 
-<figure><img src="../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Well, This was something I genuinely want to know the intended solution for.&#x20;
 
 ## Praise our RNG Gods
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are given a `chall.txt` file and a netcat server to connect to. I had never seen a python bytecode disassembled so I skipped it but then later visited this challenge again and managed to reverse it. Although I was late and so couldn't complete the challenge.
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ````0
 2 LOAD_CONST 1 (None)
@@ -323,6 +323,6 @@ if __name__ == "__main__":
 
 ## Reversing Mishaps
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Only 6 solves, Unfortunately I didn't look into this one, so I'll update this and link to others who have written about it.

@@ -26,11 +26,11 @@ VOID earlyBirdAPC() {
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
 
 Note that since the thread was is suspended state, it directly runs all of the APC routine (which is just 1 in our case) and exits which is why we don't see a CMD spawn, if we look at it using Process Hacker , we can see that the cmd.exe is created in suspended state, but it exits after the calculator has been spawned. I had to use `getchar()` to be able to screenshot the suspended Process & Thread and here it is
 
-<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
 
 note that the main thread is the thread of the actual malicious process and not the victim process.
 
