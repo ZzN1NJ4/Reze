@@ -112,7 +112,8 @@ I do realize that searching this again, I didn't see the page (which is weird?).
 
 <figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
+## The Hillside Haven
 
+This challenge was quite tough and was probably the one on which I had spent most of my time on. I'll leave a link to the official writeup here for anyone to refer.
 
-
-
+{% embed url="https://github.com/hackthebox/cyber-apocalypse-2025/tree/main/OSINT/The%20Hillside%20Haven" %}
