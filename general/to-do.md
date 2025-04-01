@@ -2,17 +2,21 @@
 description: Things I did , Things I want to do
 ---
 
-# Exploration
+# To Do
 
 ## To Do
 
-* [ ] Binary Exploitation
+* [ ] Binary Exploitation / Rev CTFs
 * [ ] Memory Layout
 * [ ] x86 Memory Addressing & x86 Calling Convention
 * [ ] VirusTotal 0 detections
-* [ ] IAT Hooking / Spoofing&#x20;
+* [ ] IAT Hooking / Spoofing
 * [ ] Trampolines  / Detours
 * [ ] Anti analysis / Anti VM&#x20;
+* [ ] Sys internals
+* [ ] Mapping Injection variation
+* [ ] Get Processes list&#x20;
+* [ ] Process Self Deletion
 
 ## Explored
 
@@ -27,17 +31,10 @@ description: Things I did , Things I want to do
 * [ ] [Maldev - Rust implementation](https://reze.gitbook.io/bin/rust-maldev/rust-malware-part-1)
 * [ ] [Reversing our malware](https://reze.gitbook.io/bin/r.e./reversing-with-x64dbg)
 * [ ] [Direct & Indirect Syscalls](https://reze.gitbook.io/bin/maldev/process-injection/direct-system-call)
-
-## Interesante
-
-* process self-deletion
-* process fake arguments
-* hooking api calls
-* IAT hiding / spoofing
-
-
-
-
+* [ ] Mapping Injection
+* [ ] PEB & TEB
+* [ ] Faking Arguments
+* [ ] PPID Spoofing
 
 
 

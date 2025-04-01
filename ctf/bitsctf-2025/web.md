@@ -10,7 +10,7 @@ description: 4 - Baby Web , Get into my cute small planner , Broken Code , Quant
 
 This is what we see when visiting the website, It seems that we can have login as any user and the password doesn't seem to matter. Later, I also tried having a password given manually using burp.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When clicked on "Access Admin Area", it tries fetching the `/admin` endpoint and passes that jwt in the Authorization header. Ofcourse it gives `Forbidden` . Now I could guess this is probably something to do with jwt, but before that I'll have a look at the source code and there I found something interesting.&#x20;
 

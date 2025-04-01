@@ -14,7 +14,7 @@ we are given a binary `main`and a server to connect using netcat, on running the
 
 I tried buffer overflow but it didn't work, moving on I ran `strings` against it and got the list of all the cookie names
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 gdb shows that there is an `srand` function that takes current time as param and probably that is what goes into the cookie function.
 

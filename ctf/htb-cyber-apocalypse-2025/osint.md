@@ -4,11 +4,11 @@ I managed to do all of the OSINT challenges apart from 1 (the hillside haven). T
 
 ## Echoes in the Stone - Very Easy
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>challenge description</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>challenge description</p></figcaption></figure>
 
 So the challenge is to find the cross and have the flag as it's name. Downloading the files, I see a jpg file, opening it gives this&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I searched for this image on Yandex and quickly found this&#x20;
 
