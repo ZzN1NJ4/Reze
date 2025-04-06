@@ -17,7 +17,7 @@ Before all of that, there are some prerequisites in order to get into it like :-
 * Debugging
 * A lot of Determination & Patience
 
-<figure><img src=".gitbook/assets/helo.jpg" alt=""><figcaption><p><em>Let's start our Claws-room</em></p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
 
 Complexity would gradually increase as we dive into windows internals to understand how certain things work. I have already mentioned the resources which I have found quite useful [here](https://github.com/ZzN1NJ4/Malware-Development/blob/main/RESOURCES.md), and I don't want to repeat the same thing again so go check that out if you want.
 
