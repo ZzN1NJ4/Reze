@@ -13,6 +13,7 @@
   * [Mapping Injection](maldev/process-injection/mapping-injection.md)
 * [Evasion](maldev/evasion/README.md)
   * [PPID Spoofing](maldev/evasion/ppid-spoofing.md)
+  * [Process Argument Spoofing](maldev/evasion/process-argument-spoofing.md)
 * [Independent Malware](maldev/independent-malware.md)
 
 ## WINTERNAL
@@ -36,23 +37,25 @@
 
 * [Rust Malware - Part 1](rust-maldev/rust-malware-part-1.md)
 
-## CTF
+## CTF WRITEUPS
 
-* [BITSCTF - 2025](ctf/bitsctf-2025/README.md)
-  * [Reversing](ctf/bitsctf-2025/reversing.md)
-  * [DFIR](ctf/bitsctf-2025/dfir.md)
-  * [Pwn](ctf/bitsctf-2025/pwn.md)
-  * [OSINT](ctf/bitsctf-2025/osint.md)
-  * [Forensics](ctf/bitsctf-2025/forensics.md)
-  * [Hardware](ctf/bitsctf-2025/hardware.md)
-  * [Misc](ctf/bitsctf-2025/misc.md)
-  * [Web](ctf/bitsctf-2025/web.md)
-  * [DUMP - 14a239d](ctf/bitsctf-2025/dump-14a239d.md)
-* [HTB Cyber Apocalypse - 2025](ctf/htb-cyber-apocalypse-2025/README.md)
-  * [OSINT](ctf/htb-cyber-apocalypse-2025/osint.md)
-  * [Prompt Injection - AI](ctf/htb-cyber-apocalypse-2025/prompt-injection-ai.md)
-  * [Reversing](ctf/htb-cyber-apocalypse-2025/reversing.md)
-  * [Forensics](ctf/htb-cyber-apocalypse-2025/forensics.md)
+* [BITSCTF - 2025](ctf-writeups/bitsctf-2025/README.md)
+  * [Reversing](ctf-writeups/bitsctf-2025/reversing.md)
+  * [DFIR](ctf-writeups/bitsctf-2025/dfir.md)
+  * [Pwn](ctf-writeups/bitsctf-2025/pwn.md)
+  * [OSINT](ctf-writeups/bitsctf-2025/osint.md)
+  * [Forensics](ctf-writeups/bitsctf-2025/forensics.md)
+  * [Hardware](ctf-writeups/bitsctf-2025/hardware.md)
+  * [Misc](ctf-writeups/bitsctf-2025/misc.md)
+  * [Web](ctf-writeups/bitsctf-2025/web.md)
+  * [DUMP - 14a239d](ctf-writeups/bitsctf-2025/dump-14a239d.md)
+* [HTB Cyber Apocalypse - 2025](ctf-writeups/htb-cyber-apocalypse-2025/README.md)
+  * [OSINT](ctf-writeups/htb-cyber-apocalypse-2025/osint.md)
+  * [Prompt Injection - AI](ctf-writeups/htb-cyber-apocalypse-2025/prompt-injection-ai.md)
+  * [Reversing](ctf-writeups/htb-cyber-apocalypse-2025/reversing.md)
+  * [Forensics](ctf-writeups/htb-cyber-apocalypse-2025/forensics.md)
+* [Hack The Box](ctf-writeups/hack-the-box/README.md)
+  * [Administrator - Windows](ctf-writeups/hack-the-box/administrator-windows.md)
 
 ## Hardware
 

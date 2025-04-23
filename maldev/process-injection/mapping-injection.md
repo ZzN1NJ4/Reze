@@ -10,7 +10,7 @@ For doing the same in another Process, we can use `MapViewOfFile2` api (after ma
 
 Okay so as we know the very first thing is to create the file mapping. We can use `CreateFileMappingW` to do so. We have to give `INVALID_HANDLE_VALUE` if we want to have a page file with custom size.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ```c
 hFileObj = CreateFileMappingW(INVALID_HANDLE_VALUE, NULL, PAGE_EXECUTE_READWRITE, 0, szCode, NULL);
