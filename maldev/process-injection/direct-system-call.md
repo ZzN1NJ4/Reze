@@ -37,7 +37,7 @@ Okay so as we know that to invoke a syscall, an SSN is really important, so we w
 
 <pre class="language-c"><code class="lang-c">DWORD get_sysn(HMODULE ntHandle, LPCSTR fnName) {
 
-    DWORD               ssn = 0;
+    DWORD               SSN = 0;
     UINT_PTR    NtfnAddress = NULL;
 
     NtfnAddress = GetProcAddress(ntHandle, fnName);
@@ -46,8 +46,11 @@ Okay so as we know that to invoke a syscall, an SSN is really important, so we w
         return 0;
     }
 
-    ssn = (DWORD)((PBYTE)(NtfnAddress + 0x4))[0];
-    return ssn;
+    BYTE ssn1 = (BYTE)((PBYTE)NtfnAddress + 0x4)[0]; // 0x26
+    BYTE ssn2 = (BYTE)((PBYTE)NtfnAddress + 0x4)[1]; // 0x00
+    SSN = (DWORD)((ssn2 &#x3C;&#x3C; 8) | ssn1); // 0x26 &#x3C;&#x3C; 8  =  0x0026
+    
+    return SSN;
 }
 
 <strong>DWORD    dwNtOpenProcess = get_sysn(ntdllModule, "NtOpenProcess");
@@ -55,7 +58,7 @@ Okay so as we know that to invoke a syscall, an SSN is really important, so we w
 ....
 </code></pre>
 
-Since we know what the first 4 bytes would be , we can directly skip through them and get the first byte after it (look at the pic ) which would be our SSN for the particular function. Also since the compiler doesn't know about these functions, we would have to tell it to look for it externally and write an assembly code with the same thing. I have created a [helper.h](https://github.com/ZzN1NJ4/Malware-Development/blob/main/isystemcalls/helper.h) and included every thing in it, like the structures / function prototypes etc, which are required.
+Since we know what the first 4 bytes would be , we can directly skip through them and get the first 2 bytes after it (look at the pic ) which would be our SSN for the particular function. Also since the compiler doesn't know about these functions, we would have to tell it to look for it externally and write an assembly code with the same thing. I have created a [helper.h](https://github.com/ZzN1NJ4/Malware-Development/blob/main/isystemcalls/helper.h) and included every thing in it, like the structures / function prototypes etc, which are required.
 
 {% code title="helper.h" %}
 ```c

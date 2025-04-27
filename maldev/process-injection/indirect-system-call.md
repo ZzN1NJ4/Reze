@@ -42,7 +42,10 @@ VOID get_ssn_sign(HMODULE ntHandle, CONST LPCSTR fnName, PDWORD fnSSN, PUINT_PTR
         warn("GetProcAddress Failed  @-->0x%d || NtfnAddress @--0x%x", GetLastError(), NtfnAddress);
         return;
     }
-    *fnSSN = (DWORD)((PBYTE)(NtfnAddress + 0x4))[0];
+    
+    BYTE ssn1= (BYTE)((PBYTE)(NtfnAddress + 0x4))[0];
+    BYTE ssn2 = (BYTE)((PBYTE)(NtfnAddress + 0x4))[1];
+    *fnSSN = (PDWORD)((ssn2 << 8) | ssn1);
     *sysAddr= NtfnAddress + 0x12;
     // Again the 0F 05 should be at offset of 0x12
     
