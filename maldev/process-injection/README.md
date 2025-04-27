@@ -137,7 +137,7 @@ int main() {
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><em>Executing our code to spawn a calculator</em></p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><em>Checking  the Payload through Process Hacker</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><em>Checking  the Payload through Process Hacker</em></p></figcaption></figure>
 
 Nice, We are able to inject the shellcode into local process successfully!. \
 If there is any problem, we can add more debug statements to check what is actually happening.&#x20;
@@ -277,7 +277,7 @@ int main(int argc, char* argv[]) {
 It is important to handle errors properly and also this helps us to debug things and understand the actual problem we have in case we face any kind of error. Here we see the MSDN document for [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) which helps us gain insight on what to expect when calling the [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function.\
 
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><em>MSDN document for OpenProcess</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><em>MSDN document for OpenProcess</em></p></figcaption></figure>
 
 We can have a basic check accordingly to check the value of hProcess & print error message accordingly.  The [GetLastError](https://learn.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) function is really important while debugging our malware and we would be using this a lot.
 

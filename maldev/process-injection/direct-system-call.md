@@ -10,7 +10,7 @@ Understanding this flow is crucial when dealing with system calls, as they serve
 
 So why bother with the stupid high level stuff , when we can directly do a syscall is what some _gato_ thought.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p><em>What if I just syscall directly ?</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><em>What if I just syscall directly ?</em></p></figcaption></figure>
 
 ### Theory
 

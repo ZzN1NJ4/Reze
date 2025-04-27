@@ -171,7 +171,7 @@ we can check the first 4 value which represents the `DanS` string.
 
 <figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Rich Header in PE-bear</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Rich Header in PE-bear</p></figcaption></figure>
 
 Alright, so after the `DanS` id, there are 3 checksumed padding which appears to be NULL, after which we have a series of `Comp ID` which maybe stands for `Compiler ID` ? not sure, anyways its of 8 bytes and the way it is structured is 2 bytes each represent a number. So lets assume the `CompID` of `E2 06 B7 E5 E6 87 B6 E4` which is the encrypted one, but after **XOR** it becomes \
 `06 81 01 01 02 00 00 00` and since this is in little endian, we first need to convert it to big endian  using [left shift](https://en.wikipedia.org/wiki/Logical_shift) operation which I talked about in [this post](https://reze.gitbook.io/bin/assembly-x86/x86-architecture-overview#shift).

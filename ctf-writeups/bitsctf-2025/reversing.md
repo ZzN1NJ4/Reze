@@ -93,7 +93,7 @@ while "}" not in flag:
 
 ## Appreciation of Art
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are given a binary `a.art` and this is what we see on running it
 

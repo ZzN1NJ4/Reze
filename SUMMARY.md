@@ -14,6 +14,7 @@
 * [Evasion](maldev/evasion/README.md)
   * [PPID Spoofing](maldev/evasion/ppid-spoofing.md)
   * [Process Argument Spoofing](maldev/evasion/process-argument-spoofing.md)
+  * [Anti Debugging Techniques](maldev/evasion/anti-debugging-techniques.md)
 * [Independent Malware](maldev/independent-malware.md)
 
 ## WINTERNAL
