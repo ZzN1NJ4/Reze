@@ -16,6 +16,9 @@
   * [Process Argument Spoofing](maldev/evasion/process-argument-spoofing.md)
   * [Anti Debugging Techniques](maldev/evasion/anti-debugging-techniques.md)
 * [Independent Malware](maldev/independent-malware.md)
+* [Rust Malware](maldev/rust-malware/README.md)
+  * [Process Injection](maldev/rust-malware/process-injection.md)
+  * [API Hooking - Detours I](maldev/rust-malware/api-hooking-detours-i.md)
 
 ## WINTERNAL
 
@@ -35,8 +38,6 @@
 * [Reversing with Ghidra](r.e./reversing-with-ghidra.md)
 
 ## Rust Maldev
-
-* [Rust Malware - Part 1](rust-maldev/rust-malware-part-1.md)
 
 ## CTF WRITEUPS
 

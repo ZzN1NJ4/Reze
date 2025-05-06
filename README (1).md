@@ -4,7 +4,7 @@
 
 Hi, I am ZzN1NJ4.
 
-I like studying / practicing hacking. Currently I am learning about Malware Development & Reverse Engineering. I generally love low level stuffs. I also like spending my time solving CTF challenges like [HTB](https://app.hackthebox.com/profile/778904) / [THM](https://tryhackme.com/p/ZzN1NJ4) etc. I am OSCP Certified and interested in other certs like CPTS, CWEE, OSED, OSEP.
+I like studying / practicing hacking. Currently I am learning about Malware Development & Reverse Engineering. I generally love low level stuffs. I also like spending my time solving CTF challenges like [HTB](https://app.hackthebox.com/profile/778904) / [THM](https://tryhackme.com/p/ZzN1NJ4) etc. I am OSCP+ Certified and interested in other certs like CPTS, CWEE, OSED, OSEP.
 
 I know languages like C/C++/Python/Javascript and still learning Rust :crab:, simply because I love Rust very much . I also love playing games.
 
@@ -20,7 +20,7 @@ There would also be some  Reverse Engineering, Binary exploitation, random cool 
 ⚠️ <mark style="color:red;">**Note:**</mark> <mark style="color:red;">**Any methods, tools, or techniques discussed or demonstrated on this blog are exclusively for educational purposes.**</mark> <mark style="color:red;background-color:yellow;">**I do not endorse or support the use of this information for any malicious activities.**</mark>
 
 \
-I am still learning & I have a very far road ahead. You can reach out to me if you find any mistakes in my blog or for any other general queries here [junaid629khan@gmail.com](mailto:junaid629khan@gmail.com) or at [twitter](https://twitter.com/ZzN1NJ4) instead.\
+I am still learning & I have a very far road ahead. You can reach out to me if you find any mistakes in my blog or for any other general queries at [twitter](https://twitter.com/ZzN1NJ4).\
 Thank you.
 
 ### Socials
