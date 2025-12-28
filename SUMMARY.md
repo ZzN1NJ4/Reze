@@ -15,6 +15,7 @@
   * [PPID Spoofing](maldev/evasion/ppid-spoofing.md)
   * [Process Argument Spoofing](maldev/evasion/process-argument-spoofing.md)
   * [Anti Debugging Techniques](maldev/evasion/anti-debugging-techniques.md)
+  * [API Hashing](maldev/evasion/api-hashing.md)
 * [Independent Malware](maldev/independent-malware.md)
 * [Rust Malware](maldev/rust-malware/README.md)
   * [Process Injection](maldev/rust-malware/process-injection.md)
@@ -36,8 +37,6 @@
 
 * [Reversing with x64dbg](r.e./reversing-with-x64dbg.md)
 * [Reversing with Ghidra](r.e./reversing-with-ghidra.md)
-
-## Rust Maldev
 
 ## CTF WRITEUPS
 

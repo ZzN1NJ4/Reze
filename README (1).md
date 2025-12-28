@@ -14,8 +14,7 @@ This blog is a dedicated space where I share my knowledge and discoveries which 
 
 It is also helps me with having an easy way to access my notes which I can refer whenever I require without even the need to be on my pc. I hope you find these notes helpful.
 
-There would also be some  Reverse Engineering, Binary exploitation, random cool methods / challenges, and also other weird things that I would like to share as well.\
-
+There would also be some  Reverse Engineering, Binary exploitation, random cool methods / challenges, and also other weird things that I would like to share as well.<br>
 
 ⚠️ <mark style="color:red;">**Note:**</mark> <mark style="color:red;">**Any methods, tools, or techniques discussed or demonstrated on this blog are exclusively for educational purposes.**</mark> <mark style="color:red;background-color:yellow;">**I do not endorse or support the use of this information for any malicious activities.**</mark>
 

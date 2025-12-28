@@ -274,8 +274,7 @@ int main(int argc, char* argv[]) {
 
 ### Error Handling
 
-It is important to handle errors properly and also this helps us to debug things and understand the actual problem we have in case we face any kind of error. Here we see the MSDN document for [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) which helps us gain insight on what to expect when calling the [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function.\
-
+It is important to handle errors properly and also this helps us to debug things and understand the actual problem we have in case we face any kind of error. Here we see the MSDN document for [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) which helps us gain insight on what to expect when calling the [OpenProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) function.<br>
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><em>MSDN document for OpenProcess</em></p></figcaption></figure>
 
