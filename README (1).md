@@ -4,9 +4,9 @@
 
 Hi, I am ZzN1NJ4.
 
-I like studying / practicing hacking. Currently I am learning about Malware Development & Reverse Engineering. I generally love low level stuffs. I also like spending my time solving CTF challenges like [HTB](https://app.hackthebox.com/profile/778904) / [THM](https://tryhackme.com/p/ZzN1NJ4) etc. I am OSCP+ Certified and interested in other certs like CPTS, CWEE, OSED, OSEP.
+I like studying / practicing hacking. Currently I am learning about Malware Development & Reverse Engineering. I generally love low level stuffs. I also like spending my time solving CTF challenges like [HTB](https://app.hackthebox.com/profile/778904) / [THM](https://tryhackme.com/p/ZzN1NJ4) / [CTFTime](https://ctftime.org/) etc. I am OSCP+ Certified and interested in other certs like CPTS, CWEE, OSED, CAPE, CRTL.
 
-I know languages like C/C++/Python/Javascript and still learning Rust :crab:, simply because I love Rust very much . I also love playing games.
+I know languages like C/C++/Python/Javascript and still learning Rust :crab:, simply because I love Rust very much. I also love playing games.
 
 ### What is this Blog about?
 

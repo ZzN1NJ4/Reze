@@ -29,7 +29,7 @@ Then there is the `OR` gate where if either of them are conducting (1) , then th
 
 It then became easy to figure out the similaritess of our picture and the gates and I came to this conclusion.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 so with this, we now know what to perform with the given inputs. It would be something like this&#x20;
 

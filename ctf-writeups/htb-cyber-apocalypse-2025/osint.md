@@ -4,11 +4,11 @@ I managed to do all of the OSINT challenges apart from 1 (the hillside haven). T
 
 ## Echoes in the Stone - Very Easy
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>challenge description</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>challenge description</p></figcaption></figure>
 
 So the challenge is to find the cross and have the flag as it's name. Downloading the files, I see a jpg file, opening it gives this&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I searched for this image on Yandex and quickly found this&#x20;
 
@@ -114,6 +114,14 @@ I do realize that searching this again, I didn't see the page (which is weird?).
 
 ## The Hillside Haven
 
-This challenge was quite tough and was probably the one on which I had spent most of my time on. I'll leave a link to the official writeup here for anyone to refer.
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-{% embed url="https://github.com/hackthebox/cyber-apocalypse-2025/tree/main/OSINT/The%20Hillside%20Haven" %}
+The flag was supposed to be in the format `HTB{HouseNumber_StreetNameRoad}`
+
+This challenge was quite tough for me and was probably the one on which I had spent most of my time on. I'll leave a link to the official writeup here for anyone to refer.
+
+Here are some of the links for the writeup
+
+* [https://twc1rcle.com/ctf/team/ctf\_writeups/cyber\_apocalypse\_2025/osint/HillsideHaven](https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2025/osint/HillsideHaven)
+* [https://new0.medium.com/hackthebox-cyber-apocalypse-2025-hillside-heaven-0cb876431d6c](https://new0.medium.com/hackthebox-cyber-apocalypse-2025-hillside-heaven-0cb876431d6c)
+* [https://github.com/hackthebox/cyber-apocalypse-2025/tree/main/OSINT/The%20Hillside%20Haven](https://github.com/hackthebox/cyber-apocalypse-2025/tree/main/OSINT/The%20Hillside%20Haven)

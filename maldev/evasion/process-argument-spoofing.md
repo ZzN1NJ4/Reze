@@ -59,7 +59,7 @@ DWORD dwCorrectLength = 28;
 
 And that's it, we have updated the command line with the actual one, and also the length as well. If I know look at it through  process hacker, I see only till the powershell.exe, and it spawns a calc.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Seeing the fake args, before it has been updated </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Seeing the fake args, before it has been updated </p></figcaption></figure>
 
 
 

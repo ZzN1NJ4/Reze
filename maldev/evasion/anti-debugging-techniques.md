@@ -39,7 +39,7 @@ fn main() {
 
 Below is the screenshot of me running the same program from VSCode & x64dbg attached as well, we can see that the debugging is true in the case of x64dbg.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. Hardware Breakpoint
 

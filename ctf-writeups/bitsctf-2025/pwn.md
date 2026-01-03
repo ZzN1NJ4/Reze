@@ -14,7 +14,7 @@ we are given a binary `main`and a server to connect using netcat, on running the
 
 I tried buffer overflow but it didn't work, moving on I ran `strings` against it and got the list of all the cookie names
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 gdb shows that there is an `srand` function that takes current time as param and probably that is what goes into the cookie function.
 
@@ -73,7 +73,7 @@ The only problem I faced were with 2 cookies because they had non-english charac
 
 <figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-And we were able to do it after 4-5 tries. Apart from this, there was only 1 other challenge which was also simple although I couldn't do it because it's been a really long time since I did pwn, guess I need to revisit the basics again. I'll update it here soon :)
+And we were able to do it after 4-5 tries. Apart from this, there was only 1 other challenge which was also simple although I couldn't do it because it's been a really long time since I did pwn. I'll update it here soon :)
 
 ## Baby Pwn
 

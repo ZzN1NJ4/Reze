@@ -12,7 +12,7 @@ PPID Spoofing is a technique which is used by malwares to spoof their parent pro
 
 <figure><img src="../../.gitbook/assets/image (56).png" alt=""><figcaption><p>Powershell being spawned interactively</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>powershell from a macro</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>powershell from a macro</p></figcaption></figure>
 
 ## Theory
 
