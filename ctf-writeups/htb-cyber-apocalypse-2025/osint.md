@@ -4,15 +4,15 @@ I managed to do all of the OSINT challenges apart from 1 (the hillside haven). T
 
 ## Echoes in the Stone - Very Easy
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>challenge description</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>challenge description</p></figcaption></figure>
 
 So the challenge is to find the cross and have the flag as it's name. Downloading the files, I see a jpg file, opening it gives this&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I searched for this image on Yandex and quickly found this&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Searching on Yandex</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Searching on Yandex</p></figcaption></figure>
 
 Got the flag: `HTB{Muiredach_High_Cross}`
 
@@ -114,7 +114,7 @@ I do realize that searching this again, I didn't see the page (which is weird?).
 
 ## The Hillside Haven
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 The flag was supposed to be in the format `HTB{HouseNumber_StreetNameRoad}`
 

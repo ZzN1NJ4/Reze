@@ -16,6 +16,7 @@
   * [Process Argument Spoofing](maldev/evasion/process-argument-spoofing.md)
   * [Anti Debugging Techniques](maldev/evasion/anti-debugging-techniques.md)
   * [API Hashing](maldev/evasion/api-hashing.md)
+  * [Self Deletion](maldev/evasion/self-deletion.md)
 * [Independent Malware](maldev/independent-malware.md)
 * [Rust Malware](maldev/rust-malware/README.md)
   * [Process Injection](maldev/rust-malware/process-injection.md)

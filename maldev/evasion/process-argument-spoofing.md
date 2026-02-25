@@ -59,7 +59,7 @@ DWORD dwCorrectLength = 28;
 
 And that's it, we have updated the command line with the actual one, and also the length as well. If I know look at it through  process hacker, I see only till the powershell.exe, and it spawns a calc.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Seeing the fake args, before it has been updated </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Seeing the fake args, before it has been updated </p></figcaption></figure>
 
 
 
@@ -67,7 +67,7 @@ And that's it, we have updated the command line with the actual one, and also th
 
 I did some debugging and first thought that Process Hacker looks at the Parameters once (when we look at the properties), but it seems that I was wrong (weird because it was working earlier?) but my only guess is that maybe it looks at them once at the time of creation of process, which explains why it just doesn't update. Whereas, Process Explorer may query and get the Process Parameters everytime I look at the properties, which is always the better approach.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Process Explorer showing the updated command line</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Process Explorer showing the updated command line</p></figcaption></figure>
 
 The calc.exe dies soon and another calculatorapp process spawns, but if we look at it (calc.exe) quickly, we can see that its PPID is the powershell we created.&#x20;
 

@@ -14,11 +14,11 @@ we are given a binary `main`and a server to connect using netcat, on running the
 
 I tried buffer overflow but it didn't work, moving on I ran `strings` against it and got the list of all the cookie names
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 gdb shows that there is an `srand` function that takes current time as param and probably that is what goes into the cookie function.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Although we can also use ghidra to get better insight on it, I didn't find necessary to do so (unless the idea I had fails). On googling for ways to crack / guess the `srand` function, I found [this page](https://guyinatuxedo.github.io/09-bad_seed/sunshinectf17_prepared/index.html) very helpful. In fact, the challenged they faced is really similar to ours, they just have to guess for 50 times only. So I quickly wrote a program that does our job and this is what it looked like
 

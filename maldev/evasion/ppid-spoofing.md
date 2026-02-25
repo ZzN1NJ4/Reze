@@ -12,7 +12,7 @@ PPID Spoofing is a technique which is used by malwares to spoof their parent pro
 
 <figure><img src="../../.gitbook/assets/image (56).png" alt=""><figcaption><p>Powershell being spawned interactively</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>powershell from a macro</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>powershell from a macro</p></figcaption></figure>
 
 ## Theory
 
@@ -22,7 +22,7 @@ So how does this work? Well you must be aware we can create a process using the 
 
 We can initialize the `PROC_THREAD_ATTRIBUTE_LIST` using the [InitializeProcThreadAttributeList](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-initializeprocthreadattributelist) & then use [UpdateProcThreadAttribute](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute) api to update the value of `PROC_THREAD_ATTRIBUTE_PARENT_PROCESS` to the handle to the parent process.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>From winbase.h</p></figcaption></figure>
 

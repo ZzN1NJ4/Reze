@@ -93,7 +93,7 @@ while "}" not in flag:
 
 ## Appreciation of Art
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are given a binary `a.art` and this is what we see on running it
 
@@ -129,7 +129,7 @@ Well, This was something I genuinely want to know the intended solution for.&#x2
 
 ## Praise our RNG Gods
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are given a `chall.txt` file and a netcat server to connect to. I had never seen a python bytecode disassembled so I skipped it but then later visited this challenge again and managed to reverse it. Although I was late and so couldn't complete the challenge.
 
