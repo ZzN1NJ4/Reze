@@ -4,7 +4,7 @@
 
 There isn't much difference between a direct system call & indirect system call. As you might have seen , the implementation for direct system call was to invoke a `syscall` instruction inside the assembly. The problem with this method is that it can easily be sensed by EDR's because it is weird for a syscall to be invoked from anywhere outside of the NTDLL. So the _gato_ had to now think of a workaround.
 
-<figure><img src="../../.gitbook/assets/image (100).png" alt="" width="188"><figcaption><p><em>HMM I can snek behind EDR</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (100).png" alt="" width="188"><figcaption><p><em>Can't I sneak behind the syscall??</em></p></figcaption></figure>
 
 So it finally had a better thought, which was to instead have a `jmp` instruction to where the syscall is. This saves us from calling the syscall directly + since we jmp to a memory inside NTDLL , the syscall seems to be coming from a legit source. A nice idea indeed. Putting his thought to an assembly, _кошка_ finally finishes it's new work.
 
