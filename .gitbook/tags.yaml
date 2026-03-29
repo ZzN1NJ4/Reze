@@ -1,0 +1,9 @@
+- tag: windbg
+  label: windbg
+  color: blue
+- tag: pe-structure
+  label: pe-structure
+  color: blue
+- tag: winternal
+  label: winternal
+  color: purple

@@ -18,10 +18,12 @@
   * [API Hashing](maldev/evasion/api-hashing.md)
   * [Self Deletion](maldev/evasion/self-deletion.md)
   * [API Hooking - Trampoline](maldev/evasion/api-hooking-trampoline.md)
+* [Hell's Gate](maldev/hells-gate.md)
 * [Independent Malware](maldev/independent-malware.md)
 * [Rust Malware](maldev/rust-malware/README.md)
   * [Process Injection](maldev/rust-malware/process-injection.md)
   * [API Hooking - Detours I](maldev/rust-malware/api-hooking-detours-i.md)
+* [read](maldev/read.md)
 
 ## WINTERNAL
 
@@ -29,6 +31,7 @@
 * [PE Parser - peXtractor](winternal/pe-parser-pextractor.md)
 * [System Calls](winternal/system-calls.md)
 * [PEB & TEB](winternal/peb-and-teb.md)
+* [Dissecting PE with WinDbg](winternal/dissecting-pe-with-windbg.md)
 
 ## Assembly - x86
 

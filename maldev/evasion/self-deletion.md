@@ -38,7 +38,7 @@ First we need to get the handle to our file using the `CreateFileW` and then we 
 
 We can see here that the alternate data stream file is created as soon as the `SetFileInformationByHandle` is called.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have set the ADS , we need to again get the handle to the file. Think of this as "refreshing" so that we have the handle to the file with updated details (this should allow us to delete it which wasn't possible earlier).
 
@@ -59,7 +59,7 @@ And we update the `File_DISPOSITION_INFO` structure and mark it as delete again 
 	}
 ```
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 As soon as the rename succeeds, the actual file `kms.exe` has its size back to 0 because now the file has been renamed to an `ADS`.
 
