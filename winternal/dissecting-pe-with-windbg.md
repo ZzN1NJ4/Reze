@@ -365,7 +365,7 @@ combase!_PEB
 
 Since we have the base address for the exe, we can try to look at the `_IMAGE_DOS_HEADER` Structure using the `dt` command, which tries to display type located at the particular address. We can refer this site for the command usage. Here's what all we can do with it.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 Recalling the Dos Header, we know that the first member is the magic bytes and the last member `e_lfanew` contains the offset to the NT Headers structure.
 
@@ -398,7 +398,7 @@ combase!_IMAGE_DOS_HEADER
 To get a look at the DOS Stub and the Rich Header, we would have to manually dump the memory after the e\_lfanew until the start of the NT Header. We can do this using different commands like \
 `dq`, `dd`, `dw`, `db` to dump the memory in `QWORD`, `DWORD`, `WORD` and `BYTE` respectively. Or we can also use the `View->memory` and give the address manually to take a look at it.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can see the Dos stub and also the `Rich` string which proves the presence of the Rich header. Although it is xor encrypted and to my knowledge there aren't inbuilt commands to display it.
 
