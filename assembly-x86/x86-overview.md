@@ -39,8 +39,6 @@ RAX = 64 bit , EAX = 32 bit , AX = 16 bit , AH / AL = 8 bit (higher/lower)&#x20;
 
 **Stack Pointer** : Always points to the top of the stack
 
-<mark style="color:red;">**Note:**</mark> No pointer register can be addressed as smaller registers , i.e. SH/SL for ESP
-
 #### **EBP / RBP**
 
 **Base Pointer** : Used to access params passed by the stack
@@ -56,6 +54,8 @@ RAX = 64 bit , EAX = 32 bit , AX = 16 bit , AH / AL = 8 bit (higher/lower)&#x20;
 #### **R8 - R15**
 
 General purpose registers which are not present 32 bit systems. Addressable in 32,16 & 8 bit modes , R8D , R8W, R8B , respectively (D - Double Word , W - Word , B - Byte)
+
+<figure><img src="../.gitbook/assets/assembly registers.png" alt=""><figcaption><p><em>taken from ost2 assembly course by Xeno Kovah</em></p></figcaption></figure>
 
 ### **Status Flag Registers**
 
@@ -182,4 +182,6 @@ Aand that's it ig, I'll walkthrough a simple assembly program in the next post
 ## References
 
 * [https://www.felixcloutier.com/x86/lea](https://www.felixcloutier.com/x86/lea)
+* [https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch1001\_x86-64\_Asm+2021\_v1/about](https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch1001_x86-64_Asm+2021_v1/about)
+* [https://pwn.college/computing-101/](https://pwn.college/computing-101/)
 
