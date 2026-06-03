@@ -2,7 +2,9 @@
 
 ## MalDev
 
-* [Introduction](README.md)
+* [Misc](README.md)
+  * [Block DLL Policy](maldev/misc/block-dll-policy.md)
+* [Introduction](<README (1).md>)
 * [Process Injection](maldev/process-injection/README.md)
   * [DLL Injection](maldev/process-injection/dll-injection.md)
   * [NTAPI Injection](maldev/process-injection/ntapi-injection.md)
@@ -69,5 +71,5 @@
 
 ## General
 
-* [About Me](<README (1).md>)
+* [About Me](<README (1) (1).md>)
 * [To Do](general/to-do.md)
