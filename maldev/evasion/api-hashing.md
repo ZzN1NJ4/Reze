@@ -230,7 +230,7 @@ After everything has been done, I'll check the pe binary again in PE-bear and th
 
 <figure><img src="../../.gitbook/assets/Pasted image 20251228073846.png" alt=""><figcaption></figcaption></figure>
 
-Again, the extra APIs are due to CRT adding some of their own, if we configure it to be build for a `Release`, then we see that some of the API have been removed lowering the count, although to completely eliminate them, we would have to remove CRT (as shown [here](../independent-malware.md)).
+Again, the extra APIs are due to CRT adding some of their own, if we configure it to be build for a `Release`, then we see that some of the API have been removed lowering the count, although to completely eliminate them, we would have to remove CRT (as shown [here](../crt-independent-malware.md)).
 
 ## Pitfall
 

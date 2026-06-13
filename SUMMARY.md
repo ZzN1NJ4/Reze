@@ -21,7 +21,7 @@
   * [Self Deletion](maldev/evasion/self-deletion.md)
   * [API Hooking - Trampoline](maldev/evasion/api-hooking-trampoline.md)
 * [Hell's Gate](maldev/hells-gate.md)
-* [Independent Malware](maldev/independent-malware.md)
+* [CRT Independent Malware](maldev/crt-independent-malware.md)
 * [Rust Malware](maldev/rust-malware/README.md)
   * [Process Injection](maldev/rust-malware/process-injection.md)
   * [API Hooking - Detours I](maldev/rust-malware/api-hooking-detours-i.md)
