@@ -20,6 +20,7 @@
   * [API Hashing](maldev/evasion/api-hashing.md)
   * [Self Deletion](maldev/evasion/self-deletion.md)
   * [API Hooking - Trampoline](maldev/evasion/api-hooking-trampoline.md)
+  * [IAT Camouflage](maldev/evasion/iat-camouflage.md)
 * [Hell's Gate](maldev/hells-gate.md)
 * [CRT Independent Malware](maldev/crt-independent-malware.md)
 * [Rust Malware](maldev/rust-malware/README.md)
